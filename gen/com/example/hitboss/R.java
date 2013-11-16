@@ -58,10 +58,21 @@ public final class R {
     public static final class layout {
         public static final int activity_main=0x7f030000;
         public static final int activity_screen=0x7f030001;
+<<<<<<< HEAD
         public static final int citivas_info=0x7f030002;
         public static final int pool_info=0x7f030003;
         public static final int qiu_rui_qing=0x7f030004;
         public static final int tao_kang=0x7f030005;
+=======
+        public static final int pool_info=0x7f030002;
+        public static final int qiu_rui_qing=0x7f030003;
+        public static final int tao_kang=0x7f030004;
+        public static final int tk_chapter1=0x7f030005;
+        public static final int tk_chapter2=0x7f030006;
+        public static final int tk_chapter3=0x7f030007;
+        public static final int tk_chapter4=0x7f030008;
+        public static final int tk_chapter5=0x7f030009;
+>>>>>>> 0b9200bc443b7ea44ff7e2f4a7451593da9740c2
     }
     public static final class menu {
         public static final int main=0x7f080000;

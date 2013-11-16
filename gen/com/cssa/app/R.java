@@ -7,6 +7,8 @@
 
 package com.cssa.app;
 
+import android.view.View;
+
 public final class R {
     public static final class animator {
         public static final int left_in=0x7f040000;
@@ -58,6 +60,15 @@ public final class R {
         public static final int pool_info=0x7f030002;
         public static final int qiu_rui_qing=0x7f030003;
         public static final int tao_kang=0x7f030004;
+		public static View tk_chapter1;
+
+        public static View tk_chapter5;
+		public static View tk_chapter4;
+		public static View tk_chapter2;
+
+		public static View tk_chapter3;
+		
+
     }
     public static final class menu {
         public static final int main=0x7f080000;

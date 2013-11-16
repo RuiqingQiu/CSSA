@@ -23,7 +23,7 @@ public class qiu_rui_qing extends Activity {
         
         //A button for going to pool page
         Button pool_info = (Button) findViewById(R.id.poolButton);
-        Button civitas_info = (Button) findViewById(com.example.hitboss.R.id.FirstActivityButton);
+        Button civitas_info = (Button) findViewById(com.cssa.app.R.id.FirstActivityButton);
         pool_info.setOnClickListener(new OnClickListener(){
 
 			@Override

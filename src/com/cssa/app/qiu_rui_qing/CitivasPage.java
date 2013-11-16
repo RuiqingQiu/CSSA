@@ -17,7 +17,7 @@ public class CitivasPage extends Activity{
 	 @Override
 	    protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-	        setContentView(com.example.hitboss.R.layout.citivas_info);
+	        setContentView(com.cssa.app.R.layout.citivas_info);
       
 	    }
 

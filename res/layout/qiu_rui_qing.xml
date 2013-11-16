@@ -16,14 +16,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="37dp" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/imageView2"
-        android:text="UCSD CSSA Basketball" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -65,5 +57,32 @@
         android:layout_alignRight="@+id/imageView3"
         android:layout_below="@+id/imageView3"
         android:text="UCSD方舟子演讲" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/FirstActivityButton"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="20dp"
+        android:text="UCSD CSSA Basketball" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/poolButton"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/civitas" />
+
+    <Button
+        android:id="@+id/FirstActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/imageView4"
+        android:layout_below="@+id/imageView4"
+        android:layout_marginTop="16dp"
+        android:text="Civitas史维特斯移民咨询讲座报名表" />
 
 </RelativeLayout>

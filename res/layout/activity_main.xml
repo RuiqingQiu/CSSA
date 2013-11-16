@@ -44,7 +44,7 @@
         android:text="qiu" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/FirstActivityButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView1"
@@ -56,8 +56,8 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button2"
-        android:layout_alignBottom="@+id/button2"
+        android:layout_alignBaseline="@+id/FirstActivityButton"
+        android:layout_alignBottom="@+id/FirstActivityButton"
         android:layout_alignRight="@+id/viewFlipper1"
         android:text="Button" />
 

@@ -20,7 +20,7 @@
         />
     
     <Button
-        android:id="@+id/button2" 
+        android:id="@+id/FirstActivityButton" 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="第二章：新生行前指南"

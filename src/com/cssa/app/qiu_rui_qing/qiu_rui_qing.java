@@ -1,3 +1,8 @@
+/*
+ * Filename: qiu_rui_qing.java
+ * Author: Ruiqing Qiu
+ * Date: Nov. 16, 2013
+ */
 package com.cssa.app.qiu_rui_qing;
 
 import com.cssa.app.R;
@@ -16,6 +21,7 @@ public class qiu_rui_qing extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.qiu_rui_qing);
         
+        //A button for going to pool page
         Button pool_info = (Button) findViewById(R.id.poolButton);
         pool_info.setOnClickListener(new OnClickListener(){
 

@@ -1,3 +1,7 @@
+/*
+ * Filename: MainActivity.java
+ * Author: Zhaoyang Zeng
+ */
 package com.cssa.app;
 
 import java.util.ArrayList;

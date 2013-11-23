@@ -1,3 +1,8 @@
+/*
+ * Filenam: PoolPage.java
+ * Developer: Ruiqing Qiu
+ * Created: Nov. 23, 2013
+ */
 package com.cssa.app.qiu_rui_qing;
 
 import com.cssa.app.R;
@@ -17,7 +22,7 @@ public class PoolPage extends Activity{
 	 @Override
 	    protected void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
-	        setContentView(R.layout.pool_info);
+	        setContentView(R.layout.qrq_pool_info);
       
 	    }
 

@@ -19,7 +19,7 @@ import android.widget.Button;
 public class qiu_rui_qing extends Activity {
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.qiu_rui_qing);
+    setContentView(R.layout.qrq_qiu_rui_qing);
         
     //A button for going to pool page
     Button pool_info = (Button) findViewById(R.id.poolButton);

@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import com.cssa.app.R;
 import com.cssa.app.qiu_rui_qing.qiu_rui_qing;
 import com.cssa.app.tao_kang.tao_kang;
+import com.cssa.app.hu_jia_ying.*;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -76,6 +77,10 @@ public class MainActivity extends Activity implements OnGestureListener {
 		startActivity(i);
 	}
 	/**-------------------------END_OF_QIU_RUI_QING-----------------**/
+	public void hu_jia_ying(View v) {
+		Intent i = new Intent(getApplicationContext(), hu_jia_ying.class);
+		startActivity(i);
+	}
 	/**
 	 * below are main activity methods which Zhaoyang_Zeng will take care of 
 	 * **/

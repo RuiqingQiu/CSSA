@@ -59,6 +59,7 @@
         android:layout_alignBaseline="@+id/FirstActivityButton"
         android:layout_alignBottom="@+id/FirstActivityButton"
         android:layout_alignRight="@+id/viewFlipper1"
-        android:text="Button" />
+        android:text="Button" 
+        android:onClick="hu_jia_ying"/>
 
 </RelativeLayout>

@@ -23,20 +23,36 @@ public class qiu_rui_qing extends Activity {
         
     //A button for going to pool page
     Button pool_info = (Button) findViewById(R.id.poolButton);
-    Button civitas_info = (Button) findViewById(com.cssa.app.R.id.FirstActivityButton);
+    Button civitas_info = (Button) findViewById(R.id.FirstActivityButton);
+    Button recent_activity = (Button)findViewById(R.id.activity_list_button);
+    
+    //Set clickListener for pool_info button
     pool_info.setOnClickListener(new OnClickListener(){
       @Override
       public void onClick(View arg0) {
         Intent i = new Intent(getApplicationContext(), PoolPage.class);
+        //Putting extra to the indent with cssa url
+        i.putExtra("URL", "http://www.ucsdcssa.org/");
         startActivity(i);
       }
     });
+    
+    //Set clickListener for civitas_info button
     civitas_info.setOnClickListener(new OnClickListener(){
       @Override
       public void onClick(View v) {
         Intent i = new Intent(getApplicationContext(),CitivasPage.class);
         startActivity(i);
       }
+    });
+    
+    recent_activity.setOnClickListener(new OnClickListener(){
+		public void onClick(View v) {
+		  Intent i = new Intent(getApplicationContext(),ActivityList.class);
+		  i.putExtra("URL","http://www.ucsdcssa.ord/");
+		  startActivity(i);
+		}
+    	
     });
   }
 }

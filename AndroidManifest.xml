@@ -24,41 +24,34 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+        <!--  MainActivity Part -->
         <activity
-            
             android:name="com.cssa.app.MainActivity"
-            
             android:label="@string/app_name" >
-            
         </activity>
+        
+        <!--  TaoKang's activity -->
         <activity
-            
             android:name="com.cssa.app.tao_kang.tao_kang"
-            
+            android:label="@string/app_name" >    
+        </activity>
+        
+        <!-- QiuRuiqing's Activity -->
+        <activity            
+            android:name="com.cssa.app.qiu_rui_qing.qiu_rui_qing"          
             android:label="@string/app_name" >
-            
         </activity>
         <activity
-            
-            android:name="com.cssa.app.qiu_rui_qing.qiu_rui_qing"
-            
-            android:label="@string/app_name" >
-            
-        </activity>
-        <activity
-            
             android:name="com.cssa.app.qiu_rui_qing.PoolPage"
-            
             android:label="@string/app_name" >
-            
         </activity>
         <activity
-            
             android:name="com.cssa.app.qiu_rui_qing.CitivasPage"
-            
             android:label="@string/app_name" >
-            
+        </activity>
+        <activity
+            android:name="com.cssa.app.qiu_rui_qing.ActivityList"
+            android:label="@string/app_name">
         </activity>
     </application>
 

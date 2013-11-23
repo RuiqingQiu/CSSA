@@ -25,8 +25,6 @@ public class CitivasPage extends Activity{
 	        setContentView(com.cssa.app.R.layout.qiu_citivas_info);
       
 	    }
-
-
 	    @Override
 	    public boolean onCreateOptionsMenu(Menu menu) {
 	        // Inflate the menu; this adds items to the action bar if it is present.

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">HitBoss</string>
+    <string name="app_name">CSSA</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="pool_info">UCSD CSSA 一年一度桌球比赛</string>

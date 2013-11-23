@@ -1,3 +1,6 @@
+/*
+ * Filename: ActivityList.java
+ */
 package com.cssa.app.qiu_rui_qing;
 
 import java.util.ArrayList;

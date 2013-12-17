@@ -12,6 +12,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import module.activity_scroller;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -79,6 +81,9 @@ public class MainScreen extends Activity{
 			Log.e("error","false");
 			mBundle.putString("Name", mEdit.getText().toString());
 			i.putExtras(mBundle);
+			 activity_scroller i2 = new activity_scroller("image","url");
+				//String response = downloadUrl("http://hello-zhaoyang-udacity.com/CSSA?message=hi");
+				Log.e("message",i2.getImage()+i2.getUrl());
 			//startActivity(i);
 		}
 	}

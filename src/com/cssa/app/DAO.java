@@ -63,10 +63,11 @@ public class DAO
    * @return activity_detail object
    * @throws JSONException
    */
-  public activity_detail get_activity_detail() throws JSONException{
+  public activity_detail get_activity_detail_by_id(int ID) throws JSONException{
 	  String response="";
+	  String urlarg = "?id=" + Integer.toString(ID);
 	  try {
-		  response= downloadUrl(SERVERURL); 
+		  response= downloadUrl(SERVERURL+urlarg); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -145,10 +146,10 @@ public class DAO
    * @return
    * @throws JSONException
    */
-  public simple_activity_detail get_simple_activity_detail_by_id(int ID) throws JSONException
+  public simple_activity_detail get_simple_activity_detail_by_index(int index) throws JSONException
   {
 	  String response="";
-	  String urlarg = "?index=" + Integer.toString(ID);
+	  String urlarg = "?index=" + Integer.toString(index);
 	  try {
 		  response= downloadUrl(SERVERURL+urlarg); 
 	  } catch (IOException e) {

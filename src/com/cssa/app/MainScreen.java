@@ -47,8 +47,8 @@ public class MainScreen extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_screen);
-		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-		StrictMode.setThreadPolicy(policy);
+		//StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		//StrictMode.setThreadPolicy(policy);
 		
 	}
 	
@@ -67,16 +67,16 @@ public class MainScreen extends Activity{
 		Log.e("name",name);
 		if (name.equals("hi")){
 			String response="";
-			String url="http://hello-zhaoyang-udacity.appspot.com/CSSA?message=hi";
+			String url="http://hello-zhaoyang-udacity.appspot.com/CSSA";
 			 try {
                  response= downloadUrl(url);
                  
-         } catch (IOException e) {
-                 // TODO Auto-generated catch block
-                 e.printStackTrace();
-         }
-			//String response = downloadUrl("http://hello-zhaoyang-udacity.com/CSSA?message=hi");
-			Log.e("message",response);
+	         } catch (IOException e) {
+	                 // TODO Auto-generated catch block
+	                 e.printStackTrace();
+	         }
+			 //String response = downloadUrl("http://hello-zhaoyang-udacity.com/CSSA?message=hi");
+			 Log.e("message",response);
 		}else{
 			Log.e("error","false");
 			mBundle.putString("Name", mEdit.getText().toString());

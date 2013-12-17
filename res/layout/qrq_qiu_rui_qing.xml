@@ -26,20 +26,12 @@
         android:maxWidth="@dimen/activity_horizontal_margin"
         />
 
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/button1"
-        android:layout_below="@+id/button1"
-        android:src="@drawable/ic_launcher" />
-
     <Button
         android:id="@+id/poolButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/imageView1"
-        android:layout_below="@+id/imageView1"
+        android:layout_alignRight="@+id/button1"
+        android:layout_below="@+id/button1"
         android:text="CSSA一年一季桌球赛" />
 
     <ImageView
@@ -58,16 +50,6 @@
         android:layout_below="@+id/imageView3"
         android:text="UCSD方舟子演讲" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/FirstActivityButton"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:text="UCSD CSSA Basketball" />
-
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
@@ -84,5 +66,22 @@
         android:layout_below="@+id/imageView4"
         android:layout_marginTop="16dp"
         android:text="Civitas史维特斯移民咨询讲座报名表" />
+
+    <Button
+        android:id="@+id/activity_list_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/FirstActivityButton"
+        android:layout_below="@+id/FirstActivityButton"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/activity_list_button"
+        android:layout_marginRight="34dp"
+        android:text="UCSD CSSA Basketball" />
 
 </RelativeLayout>

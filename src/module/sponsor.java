@@ -1,22 +1,28 @@
 package module;
 
-import java.util.ArrayList;
+
 
 public class sponsor {
-	private ArrayList<String> images;
-	private ArrayList<String> urls;
+	private String images;
+	private String urls;
+	private String text;
 	
-	public sponsor(ArrayList<String> arg0,ArrayList<String> arg1){
-		images=arg0;
-		urls=arg1;
+	public sponsor(String images,String urls,String text){
+		this.images=images;
+		this.urls=urls;
+		this.text = text;
 	}
 	
-	public String getSponsorImgFromIndex(int index){
-		return images.get(index);
+	public String getImages(){
+		return images;
 	}
 	
-	public String getSponsorUrlFromIndex(int index){
-		return urls.get(index);
+	public String getUrls(){
+		return urls;
+	}
+	
+	public String getText(){
+		return text;
 	}
 
 }

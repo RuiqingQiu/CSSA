@@ -9,12 +9,12 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 
+import module.activity_scroller;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.util.Log;
-
-
 
 public class DAO 
 {
@@ -23,7 +23,7 @@ public class DAO
   {	
   }
   
-  public void get_activity_scroller() throws JSONException
+  public activity_scroller get_activity_scroller() throws JSONException
   {
 	  String response="";
 	  String url="http://hello-zhaoyang-udacity.appspot.com/CSSA";
@@ -40,9 +40,7 @@ public class DAO
 	  JSONObject asObject = CSSAObject.getJSONObject("activity_scroller");
 	  String uniURL = asObject.getString("url");
 	  String uniImage = asObject.getString("image");
-	  System.out.println(uniURL);
-	  System.out.println(uniImage);
-	  
+	  return new activity_scroller(uniImage,uniURL);
   }
   
   private String downloadUrl(String myurl) throws IOException {

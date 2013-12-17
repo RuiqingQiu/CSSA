@@ -5,5 +5,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="lib" path="/Users/raymondqiu/Downloads/Downloads_20131001/junit-4.11.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

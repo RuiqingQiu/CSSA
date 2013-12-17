@@ -138,16 +138,19 @@ public class DAO
 	  return new freshman101(rawData);
   }
   
+ 
   /**
    * 
-   * @return simple_activity_detail
+   * @param ID
+   * @return
    * @throws JSONException
    */
-  public simple_activity_detail get_simple_activity_detail() throws JSONException
+  public simple_activity_detail get_simple_activity_detail_by_id(int ID) throws JSONException
   {
 	  String response="";
+	  String urlarg = "?index=" + Integer.toString(ID);
 	  try {
-		  response= downloadUrl(SERVERURL); 
+		  response= downloadUrl(SERVERURL+urlarg); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -171,11 +174,12 @@ public class DAO
    * @return
    * @throws JSONException
    */
-  public sponsor get_sponsor() throws JSONException
+  public sponsor get_sponsor_by_index(int index) throws JSONException
   {
 	  String response="";
+	  String urlarg = "?index=" + Integer.toString(index);
 	  try {
-		  response= downloadUrl(SERVERURL); 
+		  response= downloadUrl(SERVERURL+urlarg); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();

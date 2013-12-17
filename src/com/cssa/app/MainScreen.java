@@ -21,6 +21,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
 
 import com.cssa.app.R;
 
@@ -61,6 +62,13 @@ public class MainScreen extends Activity{
 		Intent i = new Intent(this, MainActivity.class);  
 		Bundle mBundle = new Bundle();
 		EditText mEdit   = (EditText)findViewById(R.id.editText1);
+		DAO d1 = new DAO();
+		try {
+			d1.get_activity_scroller();
+		} catch (JSONException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		String name = mEdit.getText().toString();
 		Log.e("name",name);
 		if (name.equals("hi")){
@@ -68,6 +76,7 @@ public class MainScreen extends Activity{
 			String url="http://hello-zhaoyang-udacity.appspot.com/CSSA";
 			 try {
                  response= downloadUrl(url);
+                 
                  
 	         } catch (IOException e) {
 	                 // TODO Auto-generated catch block

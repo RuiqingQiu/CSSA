@@ -1,15 +1,21 @@
 package module;
 
 public class simple_activity_detail {
+	private String id;
 	private String date;
 	private String image;
 	private String introduction;
 	
 	//args: date, image, introduction
-	public simple_activity_detail(String arg0,String arg1,String arg2){
-		date=arg0;
-		image=arg1;
-		introduction=arg2;
+	public simple_activity_detail(String id,String date,String image, String introduction){
+		this.id = id;
+		this.date=date;
+		this.image=image;
+		this.introduction=introduction;
+	}
+	
+	public String getId(){
+		return id;
 	}
 	
 	public String getDate(){

@@ -167,7 +167,7 @@ public class DAO
 	  String date = sadObject.getString("date");
 	  String introduction = sadObject.getString("introduction");
 	  
-	  return new simple_activity_detail(id,image,date,introduction);
+	  return new simple_activity_detail(id,date,image,introduction);
   }
   
   /**

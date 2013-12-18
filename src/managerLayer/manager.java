@@ -12,6 +12,8 @@ import module.recent_activity;
 import module.simple_activity_detail;
 import module.sponsor;
 
+import android.util.Log;
+
 import com.cssa.app.DAO;
 
 public class manager {
@@ -39,9 +41,9 @@ public class manager {
 	}
 
 	public recent_activity getNextPageRecentActivity(int count){
-		cursorOfActivity+=count;
 		recent_activity r_a = new recent_activity();
 		for(int i = 0 ; i < count ; i++){
+			
 			try{
 				simple_activity_detail s_a = dao.get_simple_activity_detail_by_index(i+cursorOfActivity);
 				r_a.addActivity(s_a);
@@ -49,6 +51,7 @@ public class manager {
 				return r_a;
 			}
 		}
+		cursorOfActivity+=count;
 		return r_a;
 	}
 	

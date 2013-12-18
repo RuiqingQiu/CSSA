@@ -12,6 +12,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import managerLayer.manager;
 import module.activity_scroller;
 
 import org.apache.http.HttpResponse;
@@ -48,8 +49,8 @@ public class MainScreen extends Activity{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_screen);
-		//StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-		//StrictMode.setThreadPolicy(policy);
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy);
 		
 	}
 	
@@ -85,7 +86,10 @@ public class MainScreen extends Activity{
 	                 e.printStackTrace();
 	         }
 			 //String response = downloadUrl("http://hello-zhaoyang-udacity.com/CSSA?message=hi");
-			 Log.e("message",response);
+			 String m;
+			m = manager.getManager().getNextPageRecentActivity(5).getSimpleActivityFromIndex(2).getImage();
+			Log.e("message",m);
+			 
 		}else{
 			Log.e("error","false");
 			mBundle.putString("Name", mEdit.getText().toString());

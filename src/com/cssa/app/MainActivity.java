@@ -19,6 +19,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -40,7 +41,7 @@ public class MainActivity extends Activity implements OnGestureListener {
 	//handler used in postdelay method
 	private Handler h; 
 	//arraylist used to store list of images for animation purpose
-	private ArrayList<Integer> imgs =new ArrayList<Integer>();
+	private ArrayList<Bitmap> imgs =new ArrayList<Bitmap>();
 	//index used in animation to indicate which image should be presenteed
 	private int index=0;
 	//boolean idicate if animation is start or not
@@ -68,7 +69,7 @@ public class MainActivity extends Activity implements OnGestureListener {
 		
 		//animation block may be delete in the future
 		ImageView img = (ImageView)findViewById(R.id.imageView1);
-		img.setImageResource(R.drawable.gif0);
+		img.setImageBitmap(imgs.get(0));
 		
 		
 		//draw(imgs,index);
@@ -104,11 +105,11 @@ public class MainActivity extends Activity implements OnGestureListener {
 	
 	
 	//setFilpperImage function is used to set the image to viewflipper
-	private void setFlipperImage(int res) {
+	private void setFlipperImage(Bitmap res) {
 	    //Log.i("Set Filpper Called", res+"");
 		//create a imageview
 	    ImageView image = new ImageView(getApplicationContext());
-	    image.setBackgroundResource(res);
+	    image.setImageBitmap(res);
 	    //add that view to viewflipper
 	    viewFlipper.addView(image);
 	}
@@ -135,12 +136,12 @@ public class MainActivity extends Activity implements OnGestureListener {
 	};
 	
 	//draw method used for animation
-	private void draw(ArrayList<Integer> list, int id){
+	private void draw(ArrayList<Bitmap> list, int id){
 		//get the imgview
 		index=id;
 		ImageView img = (ImageView)findViewById(R.id.imageView1);
 		//draw on that imgview
-		img.setImageResource(list.get(id));
+		img.setImageBitmap(list.get(id));
 		//increment index
 		index++;
 		//detect the end for animation

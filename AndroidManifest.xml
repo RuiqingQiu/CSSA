@@ -36,6 +36,35 @@
             android:label="@string/app_name" >    
         </activity>
         
+        <activity
+            android:name="com.cssa.app.taokang.chapter1"
+            android:label="@string/app_name" >
+            
+        </activity>
+        
+        <activity
+             android:name="com.cssa.app.taokang.chapter2"
+            android:label="@string/app_name" >
+            
+        </activity>
+        
+         <activity
+            android:name="com.cssa.app.taokang.chapter3"
+            android:label="@string/app_name" >
+            
+        </activity>
+        
+        <activity
+            android:name="com.cssa.app.taokang.chapter4"
+            android:label="@string/app_name" >
+            
+        </activity>
+        
+             <activity
+            android:name="com.cssa.app.taokang.chapter5"
+            android:label="@string/app_name" >
+            
+        </activity>
         <!-- QiuRuiqing's Activity -->
         <activity            
             android:name="com.cssa.app.qiu_rui_qing.qiu_rui_qing"          

@@ -1,7 +1,5 @@
 package module;
 
-
-
 public class sponsor {
 	private String images;
 	private String urls;

@@ -9,40 +9,19 @@ import java.net.HttpURLConnection;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-
 import managerLayer.manager;
-import module.activity_scroller;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 
 import com.cssa.app.R;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.StrictMode;
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.GestureDetector.OnGestureListener;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class MainScreen extends Activity{
 	@Override
@@ -128,9 +107,8 @@ public class MainScreen extends Activity{
 
         } finally {if (is != null) {is.close();} }
         
-        
-}
-	
+	}
+	/* PRIVATE CLASS HELPER FOR GETTING INFORMATION FROM THE WEB */
 	private class DownloadWebpageText {
         private static final String DEBUG_TAG = "HttpExample";
 
@@ -189,6 +167,6 @@ public class MainScreen extends Activity{
             return result;
         }
 
-
     }
+	/* END OF PRIVATE CLASS HELPER FOR GETTING INFORMATION FROM THE WEB */
 }

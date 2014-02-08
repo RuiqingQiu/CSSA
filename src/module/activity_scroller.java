@@ -2,8 +2,6 @@ package module;
 
 import java.util.ArrayList;
 
-import android.util.Log;
-
 public class activity_scroller {
 	private String[] mimgs;
 	private ArrayList<String> imgs = new ArrayList<String>();

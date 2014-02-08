@@ -16,6 +16,7 @@ import module.freshman101;
 import module.simple_activity_detail;
 import module.sponsor;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -24,7 +25,7 @@ import android.util.Log;
 public class DAO 
 {
   public static final String SERVERURL = "http://hello-zhaoyang-udacity.appspot.com/CSSA";
-  
+  public static final String URL = "http://ucsdcssaapp.appspot.com";
   /**
    * Public constructor for DAO
    */
@@ -65,9 +66,9 @@ public class DAO
    */
   public activity_detail get_activity_detail_by_id(int ID) throws JSONException{
 	  String response="";
-	  String urlarg = "?id=" + Integer.toString(ID);
+	  String urlarg = "/app";
 	  try {
-		  response= downloadUrl(SERVERURL+urlarg); 
+		  response= downloadUrl(URL+urlarg); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -75,17 +76,27 @@ public class DAO
 	  Log.e("message",response);
 	  
 	  JSONObject mainObject = new JSONObject(response);
-	  JSONObject CSSAObject = mainObject.getJSONObject("CSSA");
-	  JSONObject adObject = CSSAObject.getJSONObject("activity_detail");
+	  //JSONObject CSSAObject = mainObject.getJSONObject("CSSA");
+	  //JSONObject adObject = CSSAObject.getJSONObject("activity_detail");
+	  //JSONObject acObject = mainObject.getJSONObject("activity");
+	  JSONArray jarray = mainObject.getJSONArray("activity");
 	  
-	  String id = adObject.getString("id");
-	  String date = adObject.getString("date");
+	 /* String id = adObject.getString("id");
+	  String postDate = adObject.getString("postDate");
+	  String eventDate = adObject.getString("activityDate");
 	  String image = adObject.getString("image");
-	  String introduction = adObject.getString("introduction");
+	  String introduction = adObject.getString("intro");
 	  String title = adObject.getString("title");
-	  String text = adObject.getString("text");
+	  String text = adObject.getString("text");*/
+	  for(int i = 0; i < jarray.length(); i++){
+		  JSONObject o = jarray.getJSONObject(i);
+		  //String id = o.getString("id");
+		  String postDate = o.getString("postDate");
+		  String eventDate = o.getString("activityDate");
+		  Log.e("message",postDate+eventDate);
+	  }
 	  
-	  return new activity_detail(id,date,image,introduction,title,text);
+	  return null;
   }
  
   /**

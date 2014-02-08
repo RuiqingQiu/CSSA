@@ -1,21 +1,15 @@
 package com.cssa.app;
 
 
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Dictionary;
-
 import managerLayer.manager;
 import module.activity_scroller;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.util.Log;
 
 public class ActivityImageFetchMachine {
 	int index=0;

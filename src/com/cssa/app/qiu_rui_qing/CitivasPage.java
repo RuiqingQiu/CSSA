@@ -7,16 +7,9 @@
 package com.cssa.app.qiu_rui_qing;
 
 import com.cssa.app.R;
-import com.cssa.app.R.layout;
-import com.cssa.app.R.menu;
-
 import android.os.Bundle;
 import android.app.Activity;
-import android.content.Intent;
 import android.view.Menu;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 
 public class CitivasPage extends Activity{
 

@@ -15,6 +15,7 @@ import com.cssa.app.hu_jia_ying.*;
 
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +23,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.Menu;
@@ -32,26 +34,27 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
-public class MainActivity extends Activity implements OnGestureListener {
+public class MainActivity extends Activity implements OnGestureListener{
 	
-	//Gesture Recognizer used to detect gesture
-	private GestureDetector HitMachine;
 	//handler used in postdelay method
 	private Handler h; 
+	private GestureDetector FlipDetector;
 	//arraylist used to store list of images for animation purpose
 	private ArrayList<Bitmap> imgs =new ArrayList<Bitmap>();
 	//index used in animation to indicate which image should be presenteed
 	private int index=0;
-	//boolean idicate if animation is start or not
-	private boolean hitting=false;
 	//view flipper for flip image on the top of the activity
 	private ViewFlipper viewFlipper;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		//create a new Gesture Detector name hitmachine to catch certain gesture like onDown
-		HitMachine=new GestureDetector(this,this);
+		FlipDetector = new GestureDetector(this,this);
+		//strict mode for internet access
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy);
+		
+		
 		h=new Handler();
 		//load imgresouces to variable imgs. 'hit' is an id that idicate which animation we want
 		loadImgResources("hit");
@@ -59,15 +62,15 @@ public class MainActivity extends Activity implements OnGestureListener {
 		viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper1);
 		//set all pictures in imgs to viewflipper for furthur gesture detection
 		for(int i=0;i<imgs.size();i++)
-		        {
-		        //  This will create dynamic image view and add them to ViewFlipper
+		{
+		    //  This will create dynamic image view and add them to ViewFlipper
 		            setFlipperImage(imgs.get(i));
-		        }
+		}
 		
 		
 		//animation block may be delete in the future
-		ImageView img = (ImageView)findViewById(R.id.imageView1);
-		img.setImageBitmap(imgs.get(0));
+		//ImageView img = (ImageView)findViewById(R.id.imageView1);
+		//img.setImageBitmap(imgs.get(0));
 		
 		
 		//draw(imgs,index);
@@ -122,37 +125,6 @@ public class MainActivity extends Activity implements OnGestureListener {
 			imgs.add(imgMachine.next());
 		}
 	}
-
-	//this is a runnable used in the draw method for furthur animation
-	private Runnable r = new Runnable(){
-		
-		 @Override
-        public void run() {
-			 //call draw method here
-                draw(imgs,index);
-        }
-	};
-	
-	//draw method used for animation
-	private void draw(ArrayList<Bitmap> list, int id){
-		//get the imgview
-		index=id;
-		ImageView img = (ImageView)findViewById(R.id.imageView1);
-		//draw on that imgview
-		img.setImageBitmap(list.get(id));
-		//increment index
-		index++;
-		//detect the end for animation
-		if (index>(imgs.size()-1)){
-			index=0;
-			hitting=false;
-			
-		}else{
-			//call draw method 0.1 sec later
-		    h.postDelayed(r, 100); 
-		}
-	}
-
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -160,26 +132,7 @@ public class MainActivity extends Activity implements OnGestureListener {
 		return true;
 	}
 	
-	//ontouchevent is handled by hitmachine
-	@Override
-	public boolean onTouchEvent(MotionEvent me) {
-		return HitMachine.onTouchEvent(me);
-	}
 
-	//ondown method is called when you hit screen really really hard :)
-	@Override
-	public boolean onDown(MotionEvent arg0) {
-		// TODO Auto-generated method stub
-		//TextView text = (TextView)findViewById(R.id.textView2);
-		//Log.e("WOW", "DOWN");
-		
-		//if hitting animation is not started yet, start it
-		if (hitting==false){
-			hitting=true;
-			draw(imgs,index);
-		}
-		return false;
-	}
 
 	//helper function conver dp to pixel
 	public static float convertDpToPixel(float dp, Context context){
@@ -187,6 +140,11 @@ public class MainActivity extends Activity implements OnGestureListener {
 	    DisplayMetrics metrics = resources.getDisplayMetrics();
 	    float px = dp * (metrics.densityDpi / 160f);
 	    return px;
+	}
+	
+	@Override
+	public boolean onTouchEvent(MotionEvent me){
+		return FlipDetector.onTouchEvent(me);
 	}
 	
 	//if you swipe screen, this method is called
@@ -209,7 +167,7 @@ public class MainActivity extends Activity implements OnGestureListener {
             window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
         int TitleBarHeight= contentViewTop - StatusBarHeight;
         float y=TitleBarHeight+StatusBarHeight+viewFlipper.getHeight();
-        //Log.e("Y",String.valueOf(y));
+        Log.e("Y",String.valueOf(y));
         
         //call animation if a fling occured in that certain area
         if (Math.abs(downXValue - currentX) > Math.abs(downYValue
@@ -219,7 +177,7 @@ public class MainActivity extends Activity implements OnGestureListener {
             if (downXValue < currentX && downYValue<=y && downYValue>=contentViewTop) {
             	//TextView text = (TextView)findViewById(R.id.textView2);
         		//text.setText("hit right");
-        		ImageView img = (ImageView)findViewById(R.id.imageView1);
+        		//ImageView img = (ImageView)findViewById(R.id.imageView1);
         		//img.setImageResource(R.drawable.one);
         		//index=0;
         		//animation 
@@ -233,7 +191,7 @@ public class MainActivity extends Activity implements OnGestureListener {
             if (downXValue > currentX && downYValue<=y && downYValue>=contentViewTop) {
             	//TextView text = (TextView)findViewById(R.id.textView2);
         		//text.setText("hit left");
-        		ImageView img = (ImageView)findViewById(R.id.imageView1);
+        		//ImageView img = (ImageView)findViewById(R.id.imageView1);
         		//img.setImageResource(R.drawable.two);
         		//index=1;
         		//animation
@@ -283,6 +241,12 @@ public class MainActivity extends Activity implements OnGestureListener {
 	public boolean onSingleTapUp(MotionEvent arg0) {
 		// TODO Auto-generated method stub
 		//Log.e("WOW", "UP");
+		return false;
+	}
+
+	@Override
+	public boolean onDown(MotionEvent e) {
+		// TODO Auto-generated method stub
 		return false;
 	}
 

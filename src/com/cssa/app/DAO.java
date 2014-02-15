@@ -25,7 +25,8 @@ import android.util.Log;
 public class DAO 
 {
   public static final String SERVERURL = "http://hello-zhaoyang-udacity.appspot.com/CSSA";
-  public static final String URL = "http://ucsdcssaapp.appspot.com";
+  public static final String URL = "http://ucsdcssaapp.appspot.com/";
+  public static final String IMAGEURL = "http://z.bvcx.org/cssa/geturl.txt";
   /**
    * Public constructor for DAO
    */
@@ -44,19 +45,29 @@ public class DAO
   {
 	  String response="";
 	  try {
+		  response= downloadUrl(IMAGEURL); 
+	  } catch (IOException e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+	  }
+	  Log.e("hello",response);
+	  
+	  return new activity_scroller(response,"");
+	  
+	  /*try {
 		  response= downloadUrl(SERVERURL); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
 	  }
-	  Log.e("message",response);
+	  Log.e("hello",response);
 	  
 	  JSONObject mainObject = new JSONObject(response);
 	  JSONObject CSSAObject = mainObject.getJSONObject("CSSA");
 	  JSONObject asObject = CSSAObject.getJSONObject("activity_scroller");
 	  String uniURL = asObject.getString("url");
 	  String uniImage = asObject.getString("image");
-	  return new activity_scroller(uniImage,uniURL);
+	  return new activity_scroller(uniImage,uniURL);*/
   }
   
   /**
@@ -66,7 +77,7 @@ public class DAO
    */
   public activity_detail get_activity_detail_by_id(int ID) throws JSONException{
 	  String response="";
-	  String urlarg = "/app";
+	  String urlarg = "app";
 	  try {
 		  response= downloadUrl(URL+urlarg); 
 	  } catch (IOException e) {
@@ -90,12 +101,16 @@ public class DAO
 	  String text = adObject.getString("text");*/
 	  for(int i = 0; i < jarray.length(); i++){
 		  JSONObject o = jarray.getJSONObject(i);
-		  //String id = o.getString("id");
-		  String postDate = o.getString("postDate");
+		  String id = o.getString("id");
 		  String eventDate = o.getString("activityDate");
+		  String image = o.getString("image");
+		  String introduction = o.getString("intro");
+		  String title = o.getString("title");
+		  String text = o.getString("text");
+		  String postDate = o.getString("postDate");
 		  Log.e("message",postDate+eventDate);
+		  
 	  }
-	  
 	  return null;
   }
  
@@ -234,7 +249,7 @@ public class DAO
 	        conn.setDoInput(true);
 	        conn.connect();
 	        int response = conn.getResponseCode();
-	        // Log.e("DEBUG", "The response is: " + response);
+	         Log.e("DEBUG", "The response is: " + response);
 	        is = conn.getInputStream();
 
 	        String contentAsString = new DownloadWebpageText().readIt(is);
@@ -291,7 +306,7 @@ public class DAO
 
 	    public String readIt(InputStream stream) throws IOException, UnsupportedEncodingException {
 
-	        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "Unicode"));
 	        StringBuilder sb = new StringBuilder();
 	        String line;
 

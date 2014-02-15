@@ -1,4 +1,4 @@
- <RelativeLayout
+<RelativeLayout
  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" 
     android:layout_width="match_parent"
@@ -13,46 +13,11 @@
     <ViewFlipper
         android:id="@+id/viewFlipper1"
         android:layout_width="fill_parent"
-        android:layout_height="140dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true" >
 
     </ViewFlipper>
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/viewFlipper1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
-        android:src="@drawable/ic_launcher" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/viewFlipper1"
-        android:layout_alignTop="@+id/imageView1"
-        android:text="TAP to HIT" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/imageView1"
-        android:onClick="qiu_rui_qing"
-        android:text="qiu" />
-
-    <Button
-        android:id="@+id/FirstActivityButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView1"
-        android:layout_centerHorizontal="true"
-        android:text="tao"
-        android:onClick = "tao_kang" />
 
     <Button
         android:id="@+id/button3"
@@ -63,5 +28,24 @@
         android:layout_alignRight="@+id/viewFlipper1"
         android:text="hu" 
         android:onClick="hu_jia_ying"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewFlipper1"
+        android:layout_marginTop="28dp"
+        android:onClick="qiu_rui_qing"
+        android:text="qiu" />
+
+    <Button
+        android:id="@+id/FirstActivityButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button1"
+        android:layout_alignBottom="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:onClick="tao_kang"
+        android:text="tao" />
 
 </RelativeLayout>

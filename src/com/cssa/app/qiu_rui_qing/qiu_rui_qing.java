@@ -26,7 +26,7 @@ public class qiu_rui_qing extends Activity {
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.qrq_qiu_rui_qing);
-        
+    
     //A button for going to pool page
     Button pool_info = (Button) findViewById(R.id.poolButton);
     Button civitas_info = (Button) findViewById(R.id.FirstActivityButton);
@@ -44,6 +44,7 @@ protected void onCreate(Bundle savedInstanceState) {
         DAO d1 = new DAO();
     	try {
     		d1.get_activity_detail_by_id(1);
+    		d1.get_simple_activity_detail_by_index(1);
     	} catch (JSONException e1) {
     		// TODO Auto-generated catch block
     		e1.printStackTrace();

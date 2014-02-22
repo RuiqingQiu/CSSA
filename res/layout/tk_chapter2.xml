@@ -3,11 +3,23 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
 <LinearLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="第二章：新生行前指南\n"
+        android:gravity="center"
+		android:textSize="20sp"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,4 +62,5 @@
 		android:lineSpacingExtra="6dp"
         />
 </LinearLayout>
+</RelativeLayout>
 </ScrollView>

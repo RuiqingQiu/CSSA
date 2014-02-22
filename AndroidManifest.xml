@@ -13,21 +13,16 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        <!--  MainActivity Part -->
         <activity
-            
-            android:name="com.cssa.app.MainScreen"
-            
-            android:label="@string/app_name" >
+            android:name="com.cssa.app.MainActivity"
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <!--  MainActivity Part -->
-        <activity
-            android:name="com.cssa.app.MainActivity"
-            android:label="@string/app_name" >
         </activity>
         
         <!--  TaoKang's activity -->
@@ -35,33 +30,37 @@
             android:name="com.cssa.app.tao_kang.tao_kang"
             android:label="@string/app_name" >    
         </activity>
-        
         <activity
-            android:name="com.cssa.app.taokang.chapter1"
+            android:name="com.example.newstudent.tab"
+            android:label="@string/app_name" >
+            
+        </activity>
+        <activity
+            android:name="com.cssa.app.tao_kang.chapter1"
             android:label="@string/app_name" >
             
         </activity>
         
         <activity
-             android:name="com.cssa.app.taokang.chapter2"
+             android:name="com.cssa.app.tao_kang.chapter2"
             android:label="@string/app_name" >
             
         </activity>
         
          <activity
-            android:name="com.cssa.app.taokang.chapter3"
+            android:name="com.cssa.app.tao_kang.chapter3"
             android:label="@string/app_name" >
             
         </activity>
         
         <activity
-            android:name="com.cssa.app.taokang.chapter4"
+            android:name="com.cssa.app.tao_kang.chapter4"
             android:label="@string/app_name" >
             
         </activity>
         
              <activity
-            android:name="com.cssa.app.taokang.chapter5"
+            android:name="com.cssa.app.tao_kang.chapter5"
             android:label="@string/app_name" >
             
         </activity>

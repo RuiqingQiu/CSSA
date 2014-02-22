@@ -1,4 +1,3 @@
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,23 +15,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
-        android:text="Name your Boss"
-        android:textSize="24sp" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:gravity="center_vertical|center_horizontal"
-        android:layout_gravity="center"
-        android:height="200dp"
-        android:text="GO!"
-        android:textSize="50dp"
-        android:textStyle="bold"
-        android:width="200dp" 
-        android:onClick="onClickGo"/>
+        android:text="Welcome To UCSD CSSA app"
+        android:textSize="20sp" />
 
     <EditText
         android:id="@+id/editText1"
@@ -45,5 +29,20 @@
 
         <requestFocus />
     </EditText>
+
+    <Button
+        android:id="@+id/enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="68dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:height="20dp"
+        android:onClick="onClickGo"
+        android:text="Enter"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:width="20dp" />
     
 </RelativeLayout>

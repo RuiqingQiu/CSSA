@@ -3,23 +3,14 @@
  */
 package com.cssa.app;
 
-import java.util.ArrayList;
-
 import com.cssa.app.R;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
-import android.view.GestureDetector;
-import android.view.GestureDetector.OnGestureListener;
 import android.view.Menu;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 public class Index extends Activity{
 	@Override

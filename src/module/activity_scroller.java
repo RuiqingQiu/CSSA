@@ -13,10 +13,11 @@ public class activity_scroller {
 	public activity_scroller(String image, String url){
 		this.image=image;
 		this.url=url;
-		mimgs=image.split("\\|");
+		mimgs=image.split("\n");
+		
 		for (String item : mimgs)
 	    {
-	        //Log.e("E",item);
+	        Log.e("E",item);
 	        imgs.add(item);
 	    }
 	}

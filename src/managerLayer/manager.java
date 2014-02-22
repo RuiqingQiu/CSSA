@@ -12,8 +12,6 @@ import module.recent_activity;
 import module.simple_activity_detail;
 import module.sponsor;
 
-import android.util.Log;
-
 import com.cssa.app.DAO;
 
 public class manager {

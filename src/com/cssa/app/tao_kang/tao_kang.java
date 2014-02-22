@@ -4,38 +4,29 @@
 package com.cssa.app.tao_kang;
 
 import com.cssa.app.R;
-<<<<<<< HEAD
 import com.cssa.app.R.layout;
-=======
->>>>>>> 37fe9b74a4e15d4c1b3d7850782bfce97798498c
 import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-<<<<<<< HEAD
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.TabHost;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TabHost.TabSpec;
-=======
->>>>>>> 37fe9b74a4e15d4c1b3d7850782bfce97798498c
+
 
 public class tao_kang extends TabActivity {
 	private RadioGroup group;
 	private TabHost tabHost;
 
-<<<<<<< HEAD
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-=======
-public class tao_kang extends Activity {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
->>>>>>> 37fe9b74a4e15d4c1b3d7850782bfce97798498c
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab);
         

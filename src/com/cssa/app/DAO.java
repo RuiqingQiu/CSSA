@@ -16,6 +16,7 @@ import module.freshman101;
 import module.simple_activity_detail;
 import module.sponsor;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -24,7 +25,8 @@ import android.util.Log;
 public class DAO 
 {
   public static final String SERVERURL = "http://hello-zhaoyang-udacity.appspot.com/CSSA";
-  
+  public static final String URL = "http://ucsdcssaapp.appspot.com/";
+  public static final String IMAGEURL = "http://z.bvcx.org/cssa/geturl.txt";
   /**
    * Public constructor for DAO
    */
@@ -43,19 +45,29 @@ public class DAO
   {
 	  String response="";
 	  try {
+		  response= downloadUrl(IMAGEURL); 
+	  } catch (IOException e) {
+           // TODO Auto-generated catch block
+           e.printStackTrace();
+	  }
+	  Log.e("hello",response);
+	  
+	  return new activity_scroller(response,"");
+	  
+	  /*try {
 		  response= downloadUrl(SERVERURL); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
 	  }
-	  Log.e("message",response);
+	  Log.e("hello",response);
 	  
 	  JSONObject mainObject = new JSONObject(response);
 	  JSONObject CSSAObject = mainObject.getJSONObject("CSSA");
 	  JSONObject asObject = CSSAObject.getJSONObject("activity_scroller");
 	  String uniURL = asObject.getString("url");
 	  String uniImage = asObject.getString("image");
-	  return new activity_scroller(uniImage,uniURL);
+	  return new activity_scroller(uniImage,uniURL);*/
   }
   
   /**
@@ -65,9 +77,9 @@ public class DAO
    */
   public activity_detail get_activity_detail_by_id(int ID) throws JSONException{
 	  String response="";
-	  String urlarg = "?id=" + Integer.toString(ID);
+	  String urlarg = "app";
 	  try {
-		  response= downloadUrl(SERVERURL+urlarg); 
+		  response= downloadUrl(URL+urlarg); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -75,17 +87,31 @@ public class DAO
 	  Log.e("message",response);
 	  
 	  JSONObject mainObject = new JSONObject(response);
-	  JSONObject CSSAObject = mainObject.getJSONObject("CSSA");
-	  JSONObject adObject = CSSAObject.getJSONObject("activity_detail");
+	  //JSONObject CSSAObject = mainObject.getJSONObject("CSSA");
+	  //JSONObject adObject = CSSAObject.getJSONObject("activity_detail");
+	  //JSONObject acObject = mainObject.getJSONObject("activity");
+	  JSONArray jarray = mainObject.getJSONArray("activity");
 	  
-	  String id = adObject.getString("id");
-	  String date = adObject.getString("date");
+	 /* String id = adObject.getString("id");
+	  String postDate = adObject.getString("postDate");
+	  String eventDate = adObject.getString("activityDate");
 	  String image = adObject.getString("image");
-	  String introduction = adObject.getString("introduction");
+	  String introduction = adObject.getString("intro");
 	  String title = adObject.getString("title");
-	  String text = adObject.getString("text");
-	  
-	  return new activity_detail(id,date,image,introduction,title,text);
+	  String text = adObject.getString("text");*/
+	  for(int i = 0; i < jarray.length(); i++){
+		  JSONObject o = jarray.getJSONObject(i);
+		  String id = o.getString("id");
+		  String eventDate = o.getString("activityDate");
+		  String image = o.getString("image");
+		  String introduction = o.getString("intro");
+		  String title = o.getString("title");
+		  String text = o.getString("text");
+		  String postDate = o.getString("postDate");
+		  Log.e("message",postDate+eventDate);
+		  
+	  }
+	  return null;
   }
  
   /**
@@ -223,7 +249,7 @@ public class DAO
 	        conn.setDoInput(true);
 	        conn.connect();
 	        int response = conn.getResponseCode();
-	        // Log.e("DEBUG", "The response is: " + response);
+	         Log.e("DEBUG", "The response is: " + response);
 	        is = conn.getInputStream();
 
 	        String contentAsString = new DownloadWebpageText().readIt(is);
@@ -280,7 +306,7 @@ public class DAO
 
 	    public String readIt(InputStream stream) throws IOException, UnsupportedEncodingException {
 
-	        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "Unicode"));
 	        StringBuilder sb = new StringBuilder();
 	        String line;
 

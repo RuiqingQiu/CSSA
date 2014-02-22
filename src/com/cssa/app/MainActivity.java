@@ -16,8 +16,11 @@ import com.cssa.app.hu_jia_ying.*;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
+<<<<<<< HEAD
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+=======
+>>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -36,7 +39,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
+<<<<<<< HEAD
 @SuppressLint("NewApi")
+=======
+>>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 public class MainActivity extends Activity implements OnGestureListener{
 	
 	//handler used in postdelay method
@@ -52,8 +58,11 @@ public class MainActivity extends Activity implements OnGestureListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+<<<<<<< HEAD
 		ActionBar bar = getActionBar();
 		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bar2));
+=======
+>>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 		FlipDetector = new GestureDetector(this,this);
 		//strict mode for internet access
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

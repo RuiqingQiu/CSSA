@@ -40,7 +40,7 @@ public class manager {
 
 	public recent_activity getNextPageRecentActivity(int count){
 		recent_activity r_a = new recent_activity();
-		for(int i = 0 ; i < count ; i++){
+		/*for(int i = 0 ; i < count ; i++){
 			
 			try{
 				simple_activity_detail s_a = dao.get_simple_activity_detail_by_index(i+cursorOfActivity);
@@ -49,7 +49,7 @@ public class manager {
 				return r_a;
 			}
 		}
-		cursorOfActivity+=count;
+		cursorOfActivity+=count;*/
 		return r_a;
 	}
 	

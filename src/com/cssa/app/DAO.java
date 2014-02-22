@@ -13,6 +13,7 @@ import module.activity_detail;
 import module.activity_scroller;
 import module.food2cssa;
 import module.freshman101;
+import module.recent_activity;
 import module.simple_activity_detail;
 import module.sponsor;
 
@@ -45,7 +46,11 @@ public class DAO
   {
 	  String response="";
 	  try {
+<<<<<<< HEAD
 		  response= downloadUrl(IMAGEURL); 
+=======
+		  response= downloadUrl(IMAGEURL, "Unicode"); 
+>>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -79,7 +84,11 @@ public class DAO
 	  String response="";
 	  String urlarg = "app";
 	  try {
+<<<<<<< HEAD
 		  response= downloadUrl(URL+urlarg); 
+=======
+		  response= downloadUrl(URL+urlarg, "UTF-8"); 
+>>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -99,6 +108,10 @@ public class DAO
 	  String introduction = adObject.getString("intro");
 	  String title = adObject.getString("title");
 	  String text = adObject.getString("text");*/
+<<<<<<< HEAD
+=======
+	  recent_activity r_a = new recent_activity();
+>>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 	  for(int i = 0; i < jarray.length(); i++){
 		  JSONObject o = jarray.getJSONObject(i);
 		  String id = o.getString("id");
@@ -123,7 +136,7 @@ public class DAO
   {
 	  String response="";
 	  try {
-		  response= downloadUrl(SERVERURL); 
+		  response= downloadUrl(SERVERURL, "UTF-8"); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -149,7 +162,7 @@ public class DAO
   {
 	  String response="";
 	  try {
-		  response= downloadUrl(SERVERURL); 
+		  response= downloadUrl(SERVERURL, "UTF-8"); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -172,28 +185,47 @@ public class DAO
    * @return
    * @throws JSONException
    */
-  public simple_activity_detail get_simple_activity_detail_by_index(int index) throws JSONException
+  public recent_activity get_simple_activity_detail_by_index(int index) throws JSONException
   {
 	  String response="";
-	  String urlarg = "?index=" + Integer.toString(index);
+	  String urlarg = "app";
 	  try {
-		  response= downloadUrl(SERVERURL+urlarg); 
+		  response= downloadUrl(URL+urlarg, "UTF-8"); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
 	  }
 	  Log.e("message",response);
+	  recent_activity r_a = new recent_activity();
+	  try{
+		  JSONObject mainObject = new JSONObject(response);
+		  
+		  
+		  JSONArray jarray = mainObject.getJSONArray("activity");
+		  
+		  
+		  for(int i = 0; i < jarray.length(); i++){
+			  JSONObject o = jarray.getJSONObject(i);
+			  String id = o.getString("id");
+			  String eventDate = o.getString("activityDate");
+			  String image = o.getString("image");
+			  String introduction = o.getString("intro");
+			  String title = o.getString("title");
+			  String text = o.getString("text");
+			  String postDate = o.getString("postDate");
+			  Log.e("message",postDate+eventDate);
+		 
+				simple_activity_detail s_a = new simple_activity_detail
+						(id, title, eventDate,image, introduction);
+				Log.e("test", s_a.toString());
+				r_a.addActivity(s_a);
+		  }
+	  }catch (JSONException e) {
+				e.printStackTrace();
+	  }
 	  
-	  JSONObject mainObject = new JSONObject(response);
-	  JSONObject CSSAObject = mainObject.getJSONObject("CSSA");
-	  JSONObject sadObject = CSSAObject.getJSONObject("simple_activity_detail");
 	  
-	  String id = sadObject.getString("id");
-	  String image = sadObject.getString("image");
-	  String date = sadObject.getString("date");
-	  String introduction = sadObject.getString("introduction");
-	  
-	  return new simple_activity_detail(id,date,image,introduction);
+	  return r_a;
   }
   
   /**
@@ -206,7 +238,7 @@ public class DAO
 	  String response="";
 	  String urlarg = "?index=" + Integer.toString(index);
 	  try {
-		  response= downloadUrl(SERVERURL+urlarg); 
+		  response= downloadUrl(SERVERURL+urlarg, "UTF-8"); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -230,7 +262,7 @@ public class DAO
    * @return
    * @throws IOException
    */
-  private String downloadUrl(String myurl) throws IOException {
+  private String downloadUrl(String myurl, String type) throws IOException {
 	    InputStream is = null;
 	    try 
 	    {
@@ -252,7 +284,7 @@ public class DAO
 	         Log.e("DEBUG", "The response is: " + response);
 	        is = conn.getInputStream();
 
-	        String contentAsString = new DownloadWebpageText().readIt(is);
+	        String contentAsString = new DownloadWebpageText().readIt(is, type);
 	        return contentAsString;
 
 	    } finally {if (is != null) {is.close();} }
@@ -263,50 +295,13 @@ public class DAO
 	private class DownloadWebpageText {
 	    private static final String DEBUG_TAG = "HttpExample";
 
-	    protected String execute(String... urls) {
-	            String fetchResult = "";
-	        try {
-	            fetchResult = downloadUrl(urls[0]);
-	                //return fetchResult;
+	    public String readIt(InputStream stream, String type) throws IOException, UnsupportedEncodingException {
 
-	        } catch (IOException e) {
-	            Log.e("DEBUG", "Unable to retrieve web page. URL may be invalid.");
-	            fetchResult = "Unable to retrieve web page. URL may be invalid.";
-	        }
-	        finally{
-	                return fetchResult;
-	        }
-	    }
-
-	    private String downloadUrl(String myurl) throws IOException {
-	        InputStream is = null;
-	        String fetchResult = "";
-	        try {
-	            URL url = new URL(myurl);
-	            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-	            conn.setReadTimeout(10000 /* milliseconds */);
-	            conn.setConnectTimeout(15000 /* milliseconds */);
-	            conn.setRequestMethod("GET");
-	            conn.setDoInput(true);
-	            conn.connect();
-	            int response = conn.getResponseCode();
-	            Log.d(DEBUG_TAG, "The response is: " + response);
-	            is = conn.getInputStream();
-
-	            fetchResult = readIt(is);
-
-	        } finally {
-	            if (is != null) {
-	                is.close();
-	            }
-	            
-	            return fetchResult;
-	        }
-	    }
-
-	    public String readIt(InputStream stream) throws IOException, UnsupportedEncodingException {
-
+<<<<<<< HEAD
 	        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "Unicode"));
+=======
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, type));
+>>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 	        StringBuilder sb = new StringBuilder();
 	        String line;
 

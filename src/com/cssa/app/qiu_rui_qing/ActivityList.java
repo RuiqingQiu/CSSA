@@ -7,15 +7,14 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-<<<<<<< HEAD
-=======
+
 import org.json.JSONException;
 
 import module.recent_activity;
 import module.simple_activity_detail;
 
 import com.cssa.app.DAO;
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
+
 import com.cssa.app.R;
 import android.app.Activity;
 import android.content.Context;
@@ -23,25 +22,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
-<<<<<<< HEAD
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-=======
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 import android.widget.ListView;
 import android.widget.TextView;
 
 public class ActivityList extends Activity {
   @Override
-<<<<<<< HEAD
-protected void onCreate(Bundle savedInstanceState) {
-=======
+
+
   protected void onCreate(Bundle savedInstanceState) {
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
     super.onCreate(savedInstanceState);
     setContentView(R.layout.qrq_activity_list);
     

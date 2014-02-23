@@ -8,15 +8,11 @@ package com.cssa.app.qiu_rui_qing;
 import java.io.IOException;
 
 import managerLayer.manager;
-<<<<<<< HEAD
 
 import org.json.JSONException;
 
-=======
 
 import org.json.JSONException;
-
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 import com.cssa.app.DAO;
 import com.cssa.app.R;
 import android.app.Activity;
@@ -50,10 +46,7 @@ protected void onCreate(Bundle savedInstanceState) {
         DAO d1 = new DAO();
     	try {
     		d1.get_activity_detail_by_id(1);
-<<<<<<< HEAD
-=======
     		d1.get_simple_activity_detail_by_index(1);
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
     	} catch (JSONException e1) {
     		// TODO Auto-generated catch block
     		e1.printStackTrace();

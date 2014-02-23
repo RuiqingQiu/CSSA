@@ -4,17 +4,13 @@
 package com.cssa.app.tao_kang;
 
 import com.cssa.app.R;
-<<<<<<< HEAD
 import com.cssa.app.R.layout;
-=======
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 import android.app.Activity;
 import android.app.TabActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-<<<<<<< HEAD
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -30,14 +26,6 @@ public class tao_kang extends TabActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
-=======
-
-
-public class tao_kang extends Activity {
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tab);
         

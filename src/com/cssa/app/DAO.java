@@ -46,11 +46,7 @@ public class DAO
   {
 	  String response="";
 	  try {
-<<<<<<< HEAD
-		  response= downloadUrl(IMAGEURL); 
-=======
 		  response= downloadUrl(IMAGEURL, "Unicode"); 
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -84,11 +80,8 @@ public class DAO
 	  String response="";
 	  String urlarg = "app";
 	  try {
-<<<<<<< HEAD
-		  response= downloadUrl(URL+urlarg); 
-=======
 		  response= downloadUrl(URL+urlarg, "UTF-8"); 
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
+
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
@@ -108,10 +101,8 @@ public class DAO
 	  String introduction = adObject.getString("intro");
 	  String title = adObject.getString("title");
 	  String text = adObject.getString("text");*/
-<<<<<<< HEAD
-=======
+
 	  recent_activity r_a = new recent_activity();
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
 	  for(int i = 0; i < jarray.length(); i++){
 		  JSONObject o = jarray.getJSONObject(i);
 		  String id = o.getString("id");
@@ -297,11 +288,8 @@ public class DAO
 
 	    public String readIt(InputStream stream, String type) throws IOException, UnsupportedEncodingException {
 
-<<<<<<< HEAD
-	        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, "Unicode"));
-=======
 	        BufferedReader reader = new BufferedReader(new InputStreamReader(stream, type));
->>>>>>> 3277adc44d987edb8aefeb7a72c35d816d872973
+
 	        StringBuilder sb = new StringBuilder();
 	        String line;
 

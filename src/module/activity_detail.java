@@ -14,4 +14,5 @@ public class activity_detail extends simple_activity_detail{
 		return text;
 	}
 
+	
 }

@@ -1,4 +1,4 @@
-<RelativeLayout
+<LinearLayout
  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" 
     android:layout_width="match_parent"
@@ -8,47 +8,64 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@drawable/bg"
+    android:orientation="vertical"
     tools:context=".MainActivity" >
 
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
 
     <ViewFlipper
         android:id="@+id/viewFlipper1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" >
-
+>
     </ViewFlipper>
+</LinearLayout>
 
-    <Button
-        android:id="@+id/button3"
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" >
+
+   <ImageButton
+        android:id="@+id/button_hu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/FirstActivityButton"
-        android:layout_alignBottom="@+id/FirstActivityButton"
-        android:layout_alignRight="@+id/viewFlipper1"
+        android:layout_marginTop="28dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="70dp"
+        android:background="#00000000"
         android:text="hu" 
+        android:src="@drawable/sponsor"
+        android:scaleType="centerInside"
+        android:layout_weight="1"
         android:onClick="hu_jia_ying"/>
 
     <ImageButton
-        android:id="@+id/button1"
+        android:id="@+id/button_qiu"
         android:contentDescription="recent activities"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/viewFlipper1"
         android:layout_marginTop="28dp"
-        android:background="@drawable/activity"
+        android:layout_marginRight="70dp"
+        android:background="#00000000"
         android:onClick="qiu_rui_qing"
+        android:src="@drawable/recentactivity"
+        android:scaleType="centerInside"
+        android:layout_weight="1"
         android:text="qiu" />
 
-    <Button
-        android:id="@+id/FirstActivityButton"
+    <ImageButton
+        android:id="@+id/button_tao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button1"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="50dp"
+        android:background="#00000000"
+        android:src="@drawable/xingshenshouce"
+        android:scaleType="centerInside"
         android:onClick="tao_kang"
+        android:layout_weight="1"
         android:text="tao" />
-
-</RelativeLayout>
+</LinearLayout>
+</LinearLayout>

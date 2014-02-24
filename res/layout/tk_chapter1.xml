@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="第一章：UCSD at a Glance\n"
         android:gravity="center"
-		android:textSize="20sp"
+		android:textSize="22sp"
         />
     <TextView
         android:id="@+id/text1"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_below = "@id/text0"
         android:text="UCSD简介:"
-		android:textSize="18sp"
+		android:textSize="20sp"
         />
     <TextView
         android:id="@+id/text2"
@@ -40,7 +40,7 @@
         android:layout_below = "@id/text1"
         android:lineSpacingExtra="6dp"
         android:text="@string/UCSDInfo"
-        android:textSize="12sp" />
+        android:textSize="14sp" />
     
        
     <TextView
@@ -49,14 +49,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="UCSD著名校友："
-		android:textSize="18sp"
+		android:textSize="20sp"
         />
     <TextView
         android:id="@+id/text4"
         android:layout_below = "@id/text3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:lineSpacingExtra="6dp"
         android:text="@string/UCSDGraduates"
 		
@@ -69,14 +69,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="San Diego 简介"
-		android:textSize="18sp"
+		android:textSize="20sp"
         />
     <TextView
         android:id="@+id/text6"
         android:layout_below = "@id/text5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:lineSpacingExtra="6dp"
         android:text="@string/SDInfo"
         />
@@ -88,14 +88,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="学校资源"
-		android:textSize="18sp"
+		android:textSize="20sp"
         />
     <TextView
         android:id="@+id/text8"
         android:layout_below = "@id/text7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="12sp"
+        android:textSize="14sp"
         android:lineSpacingExtra="6dp"
         android:text="@string/schoolres"
         

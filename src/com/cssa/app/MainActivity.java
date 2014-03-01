@@ -25,6 +25,7 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.GestureDetector;
@@ -54,7 +55,9 @@ public class MainActivity extends Activity implements OnGestureListener{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ActionBar bar = getActionBar();
-		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bar2));
+		bar.setIcon(
+				   new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
+		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));
 
 		FlipDetector = new GestureDetector(this,this);
 		//strict mode for internet access

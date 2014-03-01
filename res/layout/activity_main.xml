@@ -1,4 +1,4 @@
-<LinearLayout
+<RelativeLayout
  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" 
     android:layout_width="match_parent"
@@ -7,65 +7,61 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/bg"
+    android:background="@drawable/bbg_1920x1080"
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
 
-    <ViewFlipper
+  <ViewFlipper
         android:id="@+id/viewFlipper1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
->
-    </ViewFlipper>
-</LinearLayout>
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
 
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" >
+    </ViewFlipper>
+
+
 
    <ImageButton
         android:id="@+id/button_hu"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"   
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="70dp"
+        android:layout_marginRight = "10dp"
         android:background="#00000000"
-        android:text="hu" 
+        android:layout_alignBaseline="@+id/button_tao"
+        android:layout_alignBottom="@+id/button_tao"
+        android:layout_alignRight="@+id/viewFlipper1"
         android:src="@drawable/sponsor"
         android:scaleType="centerInside"
-        android:layout_weight="1"
         android:onClick="hu_jia_ying"/>
 
     <ImageButton
         android:id="@+id/button_qiu"
         android:contentDescription="recent activities"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
+        android:layout_marginLeft = "10dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginRight="70dp"
+	    android:layout_below="@+id/viewFlipper1"
+        android:layout_marginTop="1dp"
         android:background="#00000000"
         android:onClick="qiu_rui_qing"
         android:src="@drawable/recentactivity"
         android:scaleType="centerInside"
-        android:layout_weight="1"
-        android:text="qiu" />
+/>
 
     <ImageButton
         android:id="@+id/button_tao"
-        android:layout_width="wrap_content"
+        android:layout_width="80dp"
+        android:layout_marginRight = "80dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginRight="50dp"
+        android:layout_alignBaseline="@+id/button_qiu"
+        android:layout_alignBottom="@+id/button_qiu"
         android:background="#00000000"
+        android:layout_centerHorizontal="true"
         android:src="@drawable/xingshenshouce"
         android:scaleType="centerInside"
         android:onClick="tao_kang"
-        android:layout_weight="1"
-        android:text="tao" />
-</LinearLayout>
-</LinearLayout>
+/>
+
+</RelativeLayout>

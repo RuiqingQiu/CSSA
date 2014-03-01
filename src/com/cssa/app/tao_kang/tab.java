@@ -1,9 +1,6 @@
 package com.cssa.app.tao_kang;
 
-
-
 import com.cssa.app.R;
-
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -29,8 +26,6 @@ public class tab extends TabActivity {
         
         group = (RadioGroup)findViewById(R.id.main_radio);
 		tabHost = getTabHost();
-
-
 		tabHost.addTab(tabHost.newTabSpec("TAB1")
                 .setIndicator("TAB1")
                 .setContent(new Intent(this,chapter1.class)));
@@ -44,9 +39,7 @@ public class tab extends TabActivity {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				switch (checkedId) {
 				case R.id.radio_button1:
-
 					tabHost.setCurrentTabByTag("TAB1");
-					
 					break;
 				case R.id.radio_button2:
 					tabHost.setCurrentTabByTag("TAB2");

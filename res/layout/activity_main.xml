@@ -47,6 +47,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
+        android:layout_marginRight="70dp"
+        android:background="#00000000"
         android:onClick="qiu_rui_qing"
         android:src="@drawable/recentactivity"
         android:scaleType="centerInside"

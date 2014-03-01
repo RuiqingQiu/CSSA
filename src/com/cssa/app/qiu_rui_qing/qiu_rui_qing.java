@@ -45,7 +45,7 @@ protected void onCreate(Bundle savedInstanceState) {
         //i.putExtra("URL", "http://www.ucsdcssa.org/");
         DAO d1 = new DAO();
     	try {
-    		d1.get_activity_detail_by_id(1);
+    		d1.get_activity_detail_by_id(null);
     		d1.get_simple_activity_detail_by_index(1);
     	} catch (JSONException e1) {
     		// TODO Auto-generated catch block

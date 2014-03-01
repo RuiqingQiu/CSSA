@@ -81,6 +81,10 @@
             android:name="com.cssa.app.qiu_rui_qing.ActivityList"
             android:label="@string/app_name">
         </activity>
+        <activity
+            android:name="com.cssa.app.qiu_rui_qing.ActivityDetailView"
+            android:label="@string/app_name">
+        </activity>
     </application>
 
 </manifest>

@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viewFlipper1"
         android:layout_marginTop="28dp"
-        android:background="@drawable/activity"
+        android:src="@drawable/activity"
         android:onClick="qiu_rui_qing"
         android:text="qiu" />
 

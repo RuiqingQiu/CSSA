@@ -39,17 +39,13 @@ public class manager {
 	}
 
 	public recent_activity getNextPageRecentActivity(int count){
-		recent_activity r_a = new recent_activity();
-		/*for(int i = 0 ; i < count ; i++){
-			
-			try{
-				simple_activity_detail s_a = dao.get_simple_activity_detail_by_index(i+cursorOfActivity);
-				r_a.addActivity(s_a);
-			}catch (JSONException e) {
-				return r_a;
-			}
+		recent_activity r_a = null;
+		try {
+			r_a = dao.get_simple_activity_detail_by_index(1);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		cursorOfActivity+=count;*/
 		return r_a;
 	}
 	
@@ -86,7 +82,7 @@ public class manager {
 			index++;
 		}
 	}
-	public activity_detail getActivityDetailById(int ID){
+	public activity_detail getActivityDetailById(String ID){
 		try {
 			return dao.get_activity_detail_by_id(ID);
 		} catch (JSONException e) {

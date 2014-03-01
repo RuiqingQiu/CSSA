@@ -76,9 +76,9 @@ public class DAO
    * @return activity_detail object
    * @throws JSONException
    */
-  public activity_detail get_activity_detail_by_id(int ID) throws JSONException{
+  public activity_detail get_activity_detail_by_id(String ID) throws JSONException{
 	  String response="";
-	  String urlarg = "app";
+	  String urlarg = "app?type=D&id="+ID;
 	  try {
 		  response= downloadUrl(URL+urlarg, "UTF-8"); 
 
@@ -94,28 +94,20 @@ public class DAO
 	  //JSONObject acObject = mainObject.getJSONObject("activity");
 	  JSONArray jarray = mainObject.getJSONArray("activity");
 	  
-	 /* String id = adObject.getString("id");
-	  String postDate = adObject.getString("postDate");
-	  String eventDate = adObject.getString("activityDate");
-	  String image = adObject.getString("image");
-	  String introduction = adObject.getString("intro");
-	  String title = adObject.getString("title");
-	  String text = adObject.getString("text");*/
 
-	  recent_activity r_a = new recent_activity();
-	  for(int i = 0; i < jarray.length(); i++){
-		  JSONObject o = jarray.getJSONObject(i);
-		  String id = o.getString("id");
-		  String eventDate = o.getString("activityDate");
-		  String image = o.getString("image");
-		  String introduction = o.getString("intro");
-		  String title = o.getString("title");
-		  String text = o.getString("text");
-		  String postDate = o.getString("postDate");
-		  Log.e("message",postDate+eventDate);
-		  
-	  }
-	  return null;
+	  
+	 
+	  JSONObject o = jarray.getJSONObject(0);
+	  String id = o.getString("id");
+	  String eventDate = o.getString("activityDate");
+	  String image = o.getString("image");
+	  String introduction = o.getString("intro");
+	  String title = o.getString("title");
+	  String text = o.getString("text");
+	  String postDate = o.getString("postDate");
+	  activity_detail a_d = new activity_detail(id, postDate,image,introduction,title,text);
+	  Log.e("message",postDate+eventDate);
+	  return a_d;
   }
  
   /**
@@ -190,11 +182,7 @@ public class DAO
 	  recent_activity r_a = new recent_activity();
 	  try{
 		  JSONObject mainObject = new JSONObject(response);
-		  
-		  
 		  JSONArray jarray = mainObject.getJSONArray("activity");
-		  
-		  
 		  for(int i = 0; i < jarray.length(); i++){
 			  JSONObject o = jarray.getJSONObject(i);
 			  String id = o.getString("id");

@@ -10,6 +10,7 @@ import java.util.List;
 
 import org.json.JSONException;
 
+import managerLayer.manager;
 import module.recent_activity;
 import module.simple_activity_detail;
 
@@ -18,6 +19,7 @@ import com.cssa.app.DAO;
 import com.cssa.app.R;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,26 +42,22 @@ public class ActivityList extends Activity {
     setContentView(R.layout.qrq_activity_list);
     
     final ListView listview = (ListView)findViewById(R.id.listview);
-    DAO d1 = new DAO();
-    recent_activity r_a = null;
-    try {
-		r_a = d1.get_simple_activity_detail_by_index(1);
-	} catch (JSONException e1) {
-		// TODO Auto-generated catch block
-		e1.printStackTrace();
-	}
-   
+    recent_activity r_a = manager.getManager().getNextPageRecentActivity(10);
+
     final StableArrayAdapter adapter = new StableArrayAdapter(this,
             R.layout.activity_list_item, r_a.getList());
     listview.setAdapter(adapter);
-
+    final recent_activity r_a_inner = r_a;
     listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
           @Override
           public void onItemClick(AdapterView<?> parent, final View view,
               int position, long id) {
-           
-            Log.e("test",  parent.getItemAtPosition(position).toString());
+        	Intent intent = new Intent(getApplicationContext(), ActivityDetailView.class);
+        	Bundle bundle = new Bundle();
+            bundle.putString("com.cssa.app.id", r_a_inner.getList().get(position).getId());
+        	intent.putExtras(bundle);
+            startActivity(intent); 
           }
 
         });

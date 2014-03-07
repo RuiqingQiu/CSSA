@@ -7,6 +7,8 @@ package com.cssa.app;
 //LOL I DID IT
 import java.util.ArrayList;
 
+import managerLayer.manager;
+
 
 import com.cssa.app.R;
 import com.cssa.app.qiu_rui_qing.qiu_rui_qing;
@@ -128,12 +130,7 @@ public class MainActivity extends Activity implements OnGestureListener{
 	//load imaResources acoording to id
 	private void loadImgResources(String id)
 	{
-		//create a new fetchmachine for picture fetching
-		ActivityImageFetchMachine imgMachine = new ActivityImageFetchMachine();
-		//use it like iterator, if it has next, then add it.
-		while(imgMachine.hasNext()){
-			imgs.add(imgMachine.next());
-		}
+		imgs = (ArrayList<Bitmap>) manager.getManager().getImageList();
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

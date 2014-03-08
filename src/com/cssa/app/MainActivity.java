@@ -68,7 +68,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
 		
-		
 		h=new Handler();
 		//load imgresouces to variable imgs. 'hit' is an id that idicate which animation we want
 		loadImgResources("hit");
@@ -78,7 +77,7 @@ public class MainActivity extends Activity implements OnGestureListener{
 		for(int i=0;i<imgs.size();i++)
 		{
 		    //  This will create dynamic image view and add them to ViewFlipper
-		            setFlipperImage(imgs.get(i));
+		    setFlipperImage(imgs.get(i));
 		}
 	}
 	
@@ -118,8 +117,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 	
 	//setFilpperImage function is used to set the image to viewflipper
 	private void setFlipperImage(Bitmap res) {
-	    //Log.i("Set Filpper Called", res+"");
-		//create a imageview
 	    ImageView image = new ImageView(getApplicationContext());
 	    image.setImageBitmap(res);
 	    //add that view to viewflipper
@@ -157,7 +154,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 	@Override
 	public boolean onFling(MotionEvent event, MotionEvent arg1, float arg2,
 			float arg3) {
-		// TODO Auto-generated method stub
 		//get start point and end point
 		float downXValue = event.getRawX();
         float downYValue = event.getRawY();
@@ -181,12 +177,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 
             // going backwards: pushing stuff to the right
             if (downXValue < currentX && downYValue<=y && downYValue>=contentViewTop) {
-            	//TextView text = (TextView)findViewById(R.id.textView2);
-        		//text.setText("hit right");
-        		//ImageView img = (ImageView)findViewById(R.id.imageView1);
-        		//img.setImageResource(R.drawable.one);
-        		//index=0;
-        		//animation 
         		viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.right_out));
                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.left_in));
         		viewFlipper.showPrevious();
@@ -195,12 +185,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 
             // going forwards: pushing stuff to the left
             if (downXValue > currentX && downYValue<=y && downYValue>=contentViewTop) {
-            	//TextView text = (TextView)findViewById(R.id.textView2);
-        		//text.setText("hit left");
-        		//ImageView img = (ImageView)findViewById(R.id.imageView1);
-        		//img.setImageResource(R.drawable.two);
-        		//index=1;
-        		//animation
         		viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.right_in));
                 viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.left_out));
         		viewFlipper.showNext();

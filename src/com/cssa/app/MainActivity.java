@@ -13,7 +13,7 @@ import managerLayer.manager;
 import com.cssa.app.R;
 import com.cssa.app.qiu_rui_qing.qiu_rui_qing;
 import com.cssa.app.tao_kang.tao_kang;
-import com.cssa.app.hu_jia_ying.*;
+import com.cssa.app.webpages.*;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -42,7 +42,7 @@ import android.widget.ViewFlipper;
 
 @SuppressLint("NewApi")
 public class MainActivity extends Activity implements OnGestureListener{
-	
+	public static MainActivity mainActivity;
 	//handler used in postdelay method
 	private Handler h; 
 	private GestureDetector FlipDetector;
@@ -52,10 +52,12 @@ public class MainActivity extends Activity implements OnGestureListener{
 	private int index=0;
 	//view flipper for flip image on the top of the activity
 	private ViewFlipper viewFlipper;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		mainActivity = this;
 		ActionBar bar = getActionBar();
 		bar.setIcon(
 				   new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
@@ -78,14 +80,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 		    //  This will create dynamic image view and add them to ViewFlipper
 		            setFlipperImage(imgs.get(i));
 		}
-		
-		
-		//animation block may be delete in the future
-		//ImageView img = (ImageView)findViewById(R.id.imageView1);
-		//img.setImageBitmap(imgs.get(0));
-		
-		
-		//draw(imgs,index);
 	}
 	
 	/**
@@ -107,10 +101,15 @@ public class MainActivity extends Activity implements OnGestureListener{
 	
 	/**-------------------------HU_JIA_YING-----------------**/
 	public void hu_jia_ying(View v) {
-		Intent i = new Intent(getApplicationContext(), hu_jia_ying.class);
+		Intent i = new Intent(getApplicationContext(), SponsorPage.class);
 		startActivity(i);
 	}
 	/**-------------------------END_OF_HU_JIA_YING-----------------**/
+	
+	public void Food2Cssa(View v){
+		Intent i = new Intent(getApplicationContext(), Food2Cssa.class);
+		startActivity(i);
+	}
 	/**
 	 * below are main activity methods which Zhaoyang_Zeng will take care of 
 	 * **/

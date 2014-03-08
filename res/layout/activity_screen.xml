@@ -8,41 +8,10 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainScreen" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
-        android:text="Welcome To UCSD CSSA app"
-        android:textSize="20sp" />
-
-    <EditText
-        android:id="@+id/editText1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/button1"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:inputType="textPersonName" >
-
-        <requestFocus />
-    </EditText>
-
-    <Button
-        android:id="@+id/enter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="68dp"
-        android:gravity="center_vertical|center_horizontal"
-        android:height="20dp"
-        android:onClick="onClickGo"
-        android:text="Enter"
-        android:textSize="14dp"
-        android:textStyle="bold"
-        android:width="20dp" />
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignLeft="@+id/enter" />
     
 </RelativeLayout>

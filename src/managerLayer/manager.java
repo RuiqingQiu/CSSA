@@ -1,5 +1,11 @@
 package managerLayer;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,58 +20,31 @@ import module.simple_activity_detail;
 import module.sponsor;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.util.LruCache;
 
 import com.cssa.app.ActivityImageFetchMachine;
 import com.cssa.app.DAO;
+import com.cssa.app.MainActivity;
 
 public class manager {
 	public static manager M;
 	private DAO dao;
 	
-	
+	public final static String VERSION_FILENAME = "version_file";
 	private int cursorOfActivity;
-	
-	private LruCache<String, List<Bitmap>> mMemoryCache;
-	private LruCache<String, String> versionCache;
-	
-	// Get max available VM memory, exceeding this amount will throw an
-    // OutOfMemory exception. Stored in kilobytes as LruCache takes an
-    // int in its constructor.
-    final int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-    final String VERSION_KEY = "com.cssa.app.versionkey";
+	//Print 14 numbers of images. offset 1
+	public int IMAGE_NUMBERS = 15;
 
-    // Use 1/8th of the available memory for this memory cache.
-    final int cacheSize = maxMemory / 8;
     
 	private manager(){
 		dao=new DAO();
 		cursorOfActivity=0;
-		
-		 mMemoryCache = new LruCache<String, List <Bitmap>>(cacheSize) {
-		        @Override
-		        protected int sizeOf(String key, List<Bitmap> bitmap) {
-		            // The cache size will be measured in kilobytes rather than
-		            // number of items.
-		        	int totalSize = 0;
-		        	for(Bitmap b : bitmap){
-		        		totalSize += b.getByteCount()/1024;
-		        	}
-		            return totalSize;
-		        }
-		    };
-		   versionCache = new LruCache<String, String>(cacheSize) {
-		        @Override
-		        protected int sizeOf(String key, String version) {
-		            // The cache size will be measured in kilobytes rather than
-		            // number of items.
-		        	
-		            return 1;
-		        }
-		    };
 	}
+	
 	public static manager getManager(){
 		if(M==null){
 			M=new manager();
@@ -81,41 +60,98 @@ public class manager {
 			return null;
 		}
 	}
-	
-	public void addVersionCache(String key, String version) {
-	    if (getCacheVersion() == null) {
-	        versionCache.put(VERSION_KEY, version);
-	    }
+/** Need to refactor **/	
+	public void addVersionToFile(String version) {
+		try{
+			FileOutputStream fos = MainActivity.mainActivity.openFileOutput(VERSION_FILENAME, Context.MODE_PRIVATE);
+			fos.write(version.getBytes());
+			fos.close();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
 	}
 	
 	@SuppressLint("NewApi")
-	public String getCacheVersion(){
-		 return versionCache.get(VERSION_KEY);
+	public String getVersionFromFile(){
+		String line="";
+		try{
+			FileInputStream fis = MainActivity.mainActivity.openFileInput(VERSION_FILENAME);
+			InputStreamReader isr = new InputStreamReader(fis);
+			BufferedReader reader = new BufferedReader(isr);
+			line = reader.readLine();
+		}catch(IOException e){
+			e.printStackTrace();
+		}
+		return line;
 	}
-
+	
+	public Bitmap getImagesByName(String name){
+		 FileInputStream fis;
+		 Bitmap image = null;
+		 try {
+			fis = MainActivity.mainActivity.openFileInput(name);
+			image= BitmapFactory.decodeStream(fis);
+			fis.close();
+		 } catch (Exception e) {
+			e.printStackTrace();
+		 }
+		 return image;
+	}
+	public void addImagesToFiles(List<Bitmap> imgs){
+		int number = 1;
+		for(Bitmap b : imgs){
+			if(b == null){
+				number++;
+				continue;
+			}
+			else{
+				try{
+					FileOutputStream fos = MainActivity.mainActivity.openFileOutput(""+number+".png", Context.MODE_PRIVATE);
+		
+					// Writing the bitmap to the output stream
+					b.compress(Bitmap.CompressFormat.PNG, 100, fos);
+					fos.close();
+				}
+				catch(IOException e){
+					e.printStackTrace();
+				}
+				number++;
+			}
+		}
+	}
+/** File input and output **/
 	public List<Bitmap> getImageList(){
 		List<Bitmap> imgs = new ArrayList<Bitmap>();
+		//Get version from online
 		String version = dao.getVersion();
-		String cacheVersion = this.getCacheVersion();
-
-		if(cacheVersion == null)
-			cacheVersion = "";
-		Log.e("cache", "from web: " + version);
-		Log.e("cache", "from local: " + cacheVersion);
+		//Local version
+		String localVersion = this.getVersionFromFile();
+		String[] splited = version.split("\\s+");
+		String[] splited2 = localVersion.split("\\s+");
+		Log.e("cache",  splited[0]);
+		Log.e("cache",  splited2[0]);
 		//The version is same
-		if(cacheVersion.equals(version)){
+
+		if(splited[0].equals(splited2[0])){
 			//TODO load the image from cache
 			Log.e("cache", "Entering if");
-		}else{
-			this.addVersionCache(VERSION_KEY, version);
-			Log.e("cache", "Entering else");
+			for(int i = 1; i < IMAGE_NUMBERS; i++){
+				imgs.add(getImagesByName("" + i + ".png"));
+			}
 		}
-		
-		//create a new fetchmachine for picture fetching
-		ActivityImageFetchMachine imgMachine = new ActivityImageFetchMachine();
-		//use it like iterator, if it has next, then add it.
-		while(imgMachine.hasNext()){
-			imgs.add(imgMachine.next());
+		//Local version is null or older, downloaded new images
+		else{
+			this.addVersionToFile(version);
+			Log.e("cache", "Entering else");
+			//Download image and put into list
+			//create a new fetchmachine for picture fetching
+			ActivityImageFetchMachine imgMachine = new ActivityImageFetchMachine();
+			//use it like iterator, if it has next, then add it.
+			while(imgMachine.hasNext()){
+				imgs.add(imgMachine.next());
+			}
+			//Adding images to files
+			addImagesToFiles(imgs);
 		}
 		return imgs;
 	}

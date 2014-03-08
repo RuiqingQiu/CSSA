@@ -12,12 +12,13 @@
         android:allowBackup="true"
         android:icon="@drawable/logo_circle"
         android:label="CSSA"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppBaseTheme" >
         <!--  MainActivity Part -->
         <activity
             android:name="com.cssa.app.MainActivity"
             android:label="CSSA" 
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+             android:theme="@style/titlebar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

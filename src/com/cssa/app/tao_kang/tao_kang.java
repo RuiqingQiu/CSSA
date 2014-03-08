@@ -44,6 +44,9 @@ public class tao_kang extends TabActivity {
 		tabHost.addTab(tabHost.newTabSpec("TAB4")
                 .setIndicator("TAB4")
                 .setContent(new Intent(this,chapter4.class)));
+		tabHost.addTab(tabHost.newTabSpec("TAB5")
+                .setIndicator("TAB5")
+                .setContent(new Intent(this,chapter5.class)));
 	    group.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			public void onCheckedChanged(RadioGroup group, int checkedId) {
 				switch (checkedId) {
@@ -60,6 +63,9 @@ public class tao_kang extends TabActivity {
 					break;
 				case R.id.radio_button4:
 					tabHost.setCurrentTabByTag("TAB4");
+					break;
+				case R.id.radio_button5:
+					tabHost.setCurrentTabByTag("TAB5");
 					break;
 			    default:
 					break;

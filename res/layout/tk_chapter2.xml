@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bbg_1920x1080"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
@@ -97,6 +98,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/C26" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="7）行李建议"
+		android:textSize="20sp"
+        />
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C27" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="8）入境美国"
+		android:textSize="20sp"
+        />
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C28" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="9）其他重要事项"
+		android:textSize="20sp"
+        />
+       <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C29" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />

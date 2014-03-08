@@ -19,7 +19,7 @@
             <RadioButton android:id="@+id/radio_button2" android:tag="button2" android:layout_marginTop="1.0dip" android:text="Ch 2"  />
             <RadioButton android:id="@+id/radio_button3" android:tag="button3" android:layout_marginTop="1.0dip" android:text="Ch 3"  />
             <RadioButton android:id="@+id/radio_button4" android:tag="button4" android:layout_marginTop="1.0dip" android:text="Ch 4"  />
-            
+            <RadioButton android:id="@+id/radio_button5" android:tag="button5" android:layout_marginTop="1.0dip" android:text="Ch 5"  />
         </RadioGroup>
     </LinearLayout>
 </TabHost>

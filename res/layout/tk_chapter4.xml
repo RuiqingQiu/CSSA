@@ -1,14 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bbg_1920x1080"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+ <LinearLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+    
     <TextView
-        android:id="@+id/catalogue"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background = "#FF0000"
-        android:text="Chapter4"
+        android:text="第四章 衣食住行\n"
+        android:gravity="center"
+		android:textSize="22sp"
         />
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="衣"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C41" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="食"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C42" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="购物"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C43" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="住宿"
+		android:textSize="20sp"
+        />
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C44" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+     
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="交通 行车"
+		android:textSize="20sp"
+        />
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C45" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
 </LinearLayout>
+</RelativeLayout>
+</ScrollView>

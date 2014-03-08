@@ -1,14 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bbg_1920x1080"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <RelativeLayout
+        android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+ <LinearLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+    
     <TextView
-        android:id="@+id/catalogue"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background = "#FF0000"
-        android:text="Chapter3"
+        android:text="第三章 初来乍到\n"
+        android:gravity="center"
+		android:textSize="22sp"
         />
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注册报到：International center （ICenter"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C31" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="医疗检验：TB test"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C32" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="临时住宿："
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C33" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="学生保险:"
+		android:textSize="20sp"
+        />
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/C34" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+     
+        
 </LinearLayout>
+</RelativeLayout>
+</ScrollView>

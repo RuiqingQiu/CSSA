@@ -62,7 +62,30 @@
         android:src="@drawable/xingshenshouce"
         android:scaleType="centerInside"
         android:onClick="tao_kang"
-/>
+    />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="80dp" 
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_qiu"
+        android:text="FoodToCssa" 
+        android:onClick="food2cssa"/>
+    <Button
+        android:id="@+id/button6"
+        android:layout_alignBaseline="@+id/button4"
+        android:layout_alignRight="@+id/viewFlipper1"
+        android:layout_width="80dp" 
+        android:layout_height="wrap_content"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_tao"
+        android:layout_below="@+id/button_tao"
+        android:text="Button" />
 
 </RelativeLayout>
 

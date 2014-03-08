@@ -7,11 +7,13 @@ package com.cssa.app;
 //LOL I DID IT
 import java.util.ArrayList;
 
+import managerLayer.manager;
+
 
 import com.cssa.app.R;
 import com.cssa.app.qiu_rui_qing.qiu_rui_qing;
 import com.cssa.app.tao_kang.tao_kang;
-import com.cssa.app.hu_jia_ying.*;
+import com.cssa.app.webpages.*;
 
 import android.os.Bundle;
 import android.os.Handler;
@@ -40,7 +42,7 @@ import android.widget.ViewFlipper;
 
 @SuppressLint("NewApi")
 public class MainActivity extends Activity implements OnGestureListener{
-	
+	public static MainActivity mainActivity;
 	//handler used in postdelay method
 	private Handler h; 
 	private GestureDetector FlipDetector;
@@ -50,20 +52,28 @@ public class MainActivity extends Activity implements OnGestureListener{
 	private int index=0;
 	//view flipper for flip image on the top of the activity
 	private ViewFlipper viewFlipper;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+<<<<<<< HEAD
 		//ActionBar bar = getActionBar();
 		//bar.setIcon(
 				   //new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
 		//bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));
+=======
+		mainActivity = this;
+		ActionBar bar = getActionBar();
+		bar.setIcon(
+				   new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
+		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));
+>>>>>>> FETCH_HEAD
 
 		FlipDetector = new GestureDetector(this,this);
 		//strict mode for internet access
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
 		StrictMode.setThreadPolicy(policy);
-		
 		
 		h=new Handler();
 		//load imgresouces to variable imgs. 'hit' is an id that idicate which animation we want
@@ -74,16 +84,8 @@ public class MainActivity extends Activity implements OnGestureListener{
 		for(int i=0;i<imgs.size();i++)
 		{
 		    //  This will create dynamic image view and add them to ViewFlipper
-		            setFlipperImage(imgs.get(i));
+		    setFlipperImage(imgs.get(i));
 		}
-		
-		
-		//animation block may be delete in the future
-		//ImageView img = (ImageView)findViewById(R.id.imageView1);
-		//img.setImageBitmap(imgs.get(0));
-		
-		
-		//draw(imgs,index);
 	}
 	
 	/**
@@ -105,10 +107,15 @@ public class MainActivity extends Activity implements OnGestureListener{
 	
 	/**-------------------------HU_JIA_YING-----------------**/
 	public void hu_jia_ying(View v) {
-		Intent i = new Intent(getApplicationContext(), hu_jia_ying.class);
+		Intent i = new Intent(getApplicationContext(), SponsorPage.class);
 		startActivity(i);
 	}
 	/**-------------------------END_OF_HU_JIA_YING-----------------**/
+	
+	public void Food2Cssa(View v){
+		Intent i = new Intent(getApplicationContext(), Food2Cssa.class);
+		startActivity(i);
+	}
 	/**
 	 * below are main activity methods which Zhaoyang_Zeng will take care of 
 	 * **/
@@ -117,8 +124,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 	
 	//setFilpperImage function is used to set the image to viewflipper
 	private void setFlipperImage(Bitmap res) {
-	    //Log.i("Set Filpper Called", res+"");
-		//create a imageview
 	    ImageView image = new ImageView(getApplicationContext());
 	    image.setImageBitmap(res);
 	    //add that view to viewflipper
@@ -128,12 +133,7 @@ public class MainActivity extends Activity implements OnGestureListener{
 	//load imaResources acoording to id
 	private void loadImgResources(String id)
 	{
-		//create a new fetchmachine for picture fetching
-		ActivityImageFetchMachine imgMachine = new ActivityImageFetchMachine();
-		//use it like iterator, if it has next, then add it.
-		while(imgMachine.hasNext()){
-			imgs.add(imgMachine.next());
-		}
+		imgs = (ArrayList<Bitmap>) manager.getManager().getImageList();
 	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -161,7 +161,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 	@Override
 	public boolean onFling(MotionEvent event, MotionEvent arg1, float arg2,
 			float arg3) {
-		// TODO Auto-generated method stub
 		//get start point and end point
 		float downXValue = event.getRawX();
         float downYValue = event.getRawY();
@@ -185,12 +184,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 
             // going backwards: pushing stuff to the right
             if (downXValue < currentX && downYValue<=y && downYValue>=contentViewTop) {
-            	//TextView text = (TextView)findViewById(R.id.textView2);
-        		//text.setText("hit right");
-        		//ImageView img = (ImageView)findViewById(R.id.imageView1);
-        		//img.setImageResource(R.drawable.one);
-        		//index=0;
-        		//animation 
         		viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.right_out));
                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.left_in));
         		viewFlipper.showPrevious();
@@ -199,12 +192,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 
             // going forwards: pushing stuff to the left
             if (downXValue > currentX && downYValue<=y && downYValue>=contentViewTop) {
-            	//TextView text = (TextView)findViewById(R.id.textView2);
-        		//text.setText("hit left");
-        		//ImageView img = (ImageView)findViewById(R.id.imageView1);
-        		//img.setImageResource(R.drawable.two);
-        		//index=1;
-        		//animation
         		viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.right_in));
                 viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.left_out));
         		viewFlipper.showNext();

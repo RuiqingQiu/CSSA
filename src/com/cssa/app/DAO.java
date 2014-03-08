@@ -28,6 +28,7 @@ public class DAO
   public static final String SERVERURL = "http://hello-zhaoyang-udacity.appspot.com/CSSA";
   public static final String URL = "http://ucsdcssaapp.appspot.com/";
   public static final String IMAGEURL = "http://z.bvcx.org/cssa/geturl.txt";
+  public static final String VERSIONURL = "http://z.bvcx.org/cssa/version.txt";
   /**
    * Public constructor for DAO
    */
@@ -54,21 +55,19 @@ public class DAO
 	  Log.e("hello",response);
 	  
 	  return new activity_scroller(response,"");
-	  
-	  /*try {
-		  response= downloadUrl(SERVERURL); 
+  }
+  
+  public String getVersion(){
+	  String response="";
+	  try {
+		  response= downloadUrl(VERSIONURL, "UTF-8"); 
 	  } catch (IOException e) {
            // TODO Auto-generated catch block
            e.printStackTrace();
 	  }
 	  Log.e("hello",response);
+	  return response;
 	  
-	  JSONObject mainObject = new JSONObject(response);
-	  JSONObject CSSAObject = mainObject.getJSONObject("CSSA");
-	  JSONObject asObject = CSSAObject.getJSONObject("activity_scroller");
-	  String uniURL = asObject.getString("url");
-	  String uniImage = asObject.getString("image");
-	  return new activity_scroller(uniImage,uniURL);*/
   }
   
   /**

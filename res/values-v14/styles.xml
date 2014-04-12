@@ -14,7 +14,7 @@
      </style>
     
     <style name="titlebar" parent="android:Theme">
-     <item name="android:windowTitleSize">40sp</item>
+     <item name="android:windowTitleSize">60sp</item>
      <item name="android:windowTitleBackgroundStyle">@style/CustomWindowTitleBackground</item>
 </style>
     

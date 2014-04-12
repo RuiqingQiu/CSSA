@@ -13,10 +13,24 @@
      <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent">
 
         <FrameLayout android:id="@android:id/tabcontent" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
-        <TabWidget android:id="@android:id/tabs" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" />
-        <RadioGroup android:gravity="center_vertical" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@+id/main_radio" android:background="#FFFFFF" android:layout_width="fill_parent" android:layout_height="50.0dip">
-            <RadioButton android:id="@+id/radio_button1" android:tag="button1" android:layout_marginTop="1.0dip" android:text="Ch 1"  />
-            <RadioButton android:id="@+id/radio_button2" android:tag="button2" android:layout_marginTop="1.0dip" android:text="Ch 2"  />
+        <TabWidget android:id="@android:id/tabs" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_weight="0.0" android:background="@android:color/transparent"/>
+        <RadioGroup android:gravity="center_vertical" android:layout_gravity="bottom" android:orientation="horizontal" android:id="@+id/main_radio" android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="50.0dip">
+
+            <RadioButton
+                android:id="@+id/radio_button1"
+                android:layout_marginTop="1.0dip"
+                android:tag="button1"
+                android:button="@null"
+                android:layout_width="80dp"
+                android:background="@drawable/rb1"
+                android:text="" />
+
+            <RadioButton
+                android:id="@+id/radio_button2"
+                android:layout_marginTop="1.0dip"
+                android:tag="button2"
+                android:text="Ch 2" />
+
             <RadioButton android:id="@+id/radio_button3" android:tag="button3" android:layout_marginTop="1.0dip" android:text="Ch 3"  />
             <RadioButton android:id="@+id/radio_button4" android:tag="button4" android:layout_marginTop="1.0dip" android:text="Ch 4"  />
             <RadioButton android:id="@+id/radio_button5" android:tag="button5" android:layout_marginTop="1.0dip" android:text="Ch 5"  />

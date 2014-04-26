@@ -11,80 +11,48 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
+     <Button
+         android:id="@+id/button_qiu"
+         android:layout_width="160dp"
+         android:layout_height="160dp"
+         android:onClick="qiu_rui_qing"
+         android:text="recentAcitivity" />
 
-  <ViewFlipper
-        android:id="@+id/viewFlipper1"
-        android:layout_width="fill_parent"
-        android:layout_height="300dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true" >
+     <Button
+         android:id="@+id/button_tao"
+         android:layout_width="160dp"
+         android:layout_height="160dp"
+         android:layout_alignTop="@+id/button_qiu"
+         android:layout_toRightOf="@+id/button_qiu"
+         android:text="newStudent"
+         android:onClick="tao_kang"
+          />
 
-    </ViewFlipper>
+     <Button
+         android:id="@+id/button_hu"
+         android:layout_width="160dp"
+         android:layout_height="160dp"
+         android:layout_alignLeft="@+id/button_tao"
+         android:layout_below="@+id/button_tao"
+         android:onClick="hu_jia_ying"
+         android:text="sponsor" 
+         />
 
+     <Button
+         android:id="@+id/button4"
+         android:layout_width="160dp"
+         android:layout_height="160dp"
+         android:layout_alignLeft="@+id/button_qiu"
+         android:layout_alignTop="@+id/button_hu"
+         android:onClick="Food2Cssa"
+         android:text="FoodToCssa" />
 
-
-   <ImageButton
-        android:id="@+id/button_hu"
-        android:layout_width="80dp"   
-        android:layout_height="80dp"
-        android:layout_marginRight = "10dp"
-        android:background="#00000000"
-        android:layout_alignBaseline="@+id/button_tao"
-        android:layout_alignBottom="@+id/button_tao"
-        android:layout_alignRight="@+id/viewFlipper1"
-        android:src="@drawable/sponsor"
-        android:scaleType="centerInside"
-        android:onClick="hu_jia_ying"/>
-
-    <ImageButton
-        android:id="@+id/button_qiu"
-        android:contentDescription="recent activities"
-        android:layout_width="80dp"
-        android:layout_marginLeft = "10dp"
-        android:layout_height="80dp"
-	    android:layout_below="@+id/viewFlipper1"
-        android:layout_marginTop="1dp"
-        android:background="#00000000"
-        android:onClick="qiu_rui_qing"
-        android:src="@drawable/recentactivity"
-        android:scaleType="centerInside"
-/>
-
-    <ImageButton
-        android:id="@+id/button_tao"
-        android:layout_width="80dp"
-        android:layout_marginRight = "80dp"
-        android:layout_height="80dp"
-        android:layout_alignBaseline="@+id/button_qiu"
-        android:layout_alignBottom="@+id/button_qiu"
-        android:background="#00000000"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/xingshenshouce"
-        android:scaleType="centerInside"
-        android:onClick="tao_kang"
-    />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="80dp" 
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_qiu"
-        android:text="FoodToCssa" 
-        android:onClick="Food2Cssa"/>
-    <Button
-        android:id="@+id/button6"
-        android:layout_alignBaseline="@+id/button4"
-        android:layout_alignRight="@+id/viewFlipper1"
-        android:layout_width="80dp" 
-        android:layout_height="wrap_content"
-        android:text="Button" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button_tao"
-        android:layout_below="@+id/button_tao"
-        android:text="Button" />
+     <ViewFlipper
+         android:id="@+id/viewFlipper1"
+         android:layout_width="fill_parent"
+         android:layout_height="300dp"
+         android:layout_alignLeft="@+id/button4"
+         android:layout_below="@+id/button_hu" >
+     </ViewFlipper>
 
 </RelativeLayout>

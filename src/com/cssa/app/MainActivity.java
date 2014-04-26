@@ -59,10 +59,10 @@ public class MainActivity extends Activity implements OnGestureListener{
 		setContentView(R.layout.activity_main);
 
 		mainActivity = this;
-		//ActionBar bar = getActionBar();
-		//bar.setIcon(
-				   //new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
-		//bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));
+		ActionBar bar = getActionBar();
+		bar.setIcon(
+				   new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
+		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));
 
 
 		FlipDetector = new GestureDetector(this,this);

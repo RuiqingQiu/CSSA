@@ -20,20 +20,20 @@
                 android:id="@+id/radio_button1"
                 android:layout_marginTop="1.0dip"
                 android:tag="button1"
-                android:button="@null"
-                android:layout_width="80dp"
                 android:background="@drawable/rb1"
-                android:text="" />
+                style="@style/main_tab_bottom" />
 
             <RadioButton
                 android:id="@+id/radio_button2"
                 android:layout_marginTop="1.0dip"
                 android:tag="button2"
-                android:text="Ch 2" />
+                android:text="Ch 2" 
+                android:background="@drawable/rb1"
+                style="@style/main_tab_bottom"/>
 
-            <RadioButton android:id="@+id/radio_button3" android:tag="button3" android:layout_marginTop="1.0dip" android:text="Ch 3"  />
-            <RadioButton android:id="@+id/radio_button4" android:tag="button4" android:layout_marginTop="1.0dip" android:text="Ch 4"  />
-            <RadioButton android:id="@+id/radio_button5" android:tag="button5" android:layout_marginTop="1.0dip" android:text="Ch 5"  />
+            <RadioButton android:id="@+id/radio_button3" android:tag="button3" android:layout_marginTop="1.0dip" android:text="Ch 3"  android:background="@drawable/rb1" style="@style/main_tab_bottom"/>
+            <RadioButton android:id="@+id/radio_button4" android:tag="button4" android:layout_marginTop="1.0dip" android:text="Ch 4"  android:background="@drawable/rb1" style="@style/main_tab_bottom"/>
+            <RadioButton android:id="@+id/radio_button5" android:tag="button5" android:layout_marginTop="1.0dip" android:text="Ch 5"  android:background="@drawable/rb1" style="@style/main_tab_bottom"/>
         </RadioGroup>
     </LinearLayout>
 </TabHost>

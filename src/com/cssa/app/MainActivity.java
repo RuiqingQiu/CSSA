@@ -57,7 +57,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-<<<<<<< HEAD
 
 		mainActivity = this;
 		//ActionBar bar = getActionBar();
@@ -66,12 +65,6 @@ public class MainActivity extends Activity implements OnGestureListener{
 		//bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));
 
 
-=======
-		mainActivity = this;
-		ActionBar bar = getActionBar();
-		bar.setIcon(new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
-		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));
->>>>>>> FETCH_HEAD
 		FlipDetector = new GestureDetector(this,this);
 		//strict mode for internet access
 		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

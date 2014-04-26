@@ -1,6 +1,8 @@
 package managerLayer;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -37,7 +39,7 @@ public class manager {
 	public final static String VERSION_FILENAME = "version_file";
 	private int cursorOfActivity;
 	//Print 14 numbers of images. offset 1
-	public int IMAGE_NUMBERS = 15;
+	public int IMAGE_NUMBERS = 8;
 
     
 	private manager(){
@@ -95,6 +97,9 @@ public class manager {
 		 } catch (Exception e) {
 			e.printStackTrace();
 		 }
+		 //ByteArrayOutputStream out = new ByteArrayOutputStream();
+		 //image.compress(Bitmap.CompressFormat.PNG, 100, out);
+		 //Bitmap decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 		 return image;
 	}
 	public void addImagesToFiles(List<Bitmap> imgs){
@@ -136,6 +141,7 @@ public class manager {
 			//TODO load the image from cache
 			Log.e("cache", "Entering if");
 			for(int i = 1; i < IMAGE_NUMBERS; i++){
+				Log.e("load", ""+i);
 				imgs.add(getImagesByName("" + i + ".png"));
 			}
 		}

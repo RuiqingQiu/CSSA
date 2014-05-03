@@ -3,78 +3,73 @@
  */
 package com.cssa.app.tao_kang;
 
+import com.cssa.app.MainActivity;
 import com.cssa.app.R;
-import com.cssa.app.R.layout;
+import com.cssa.app.tao_kang.popMenu.OnItemClickListener;
+
+import android.app.ActionBar;
 import android.app.Activity;
-import android.app.TabActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.RadioGroup;
-import android.widget.TabHost;
-import android.widget.RadioGroup.OnCheckedChangeListener;
-import android.widget.TabHost.TabSpec;
+import android.view.ViewGroup.LayoutParams;
 
 
-public class tao_kang extends TabActivity {
-	private RadioGroup group;
-	private TabHost tabHost;
 
+public class tao_kang extends Activity implements OnClickListener, OnItemClickListener {
+	private popMenu popMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.tab);
-        
-        group = (RadioGroup)findViewById(R.id.main_radio);
-		tabHost = getTabHost();
+        setContentView(R.layout.tk_chapter1);
+        setActionBarLayout( R.layout.header );
+        findViewById(R.id.btn_title_popmenu).setOnClickListener(this);
+		
+		// 初始化弹出菜单
+		popMenu = new popMenu(this);
+		popMenu.addItems(new String[]{"ch1", "ch2", "cha3", "ch4","ch5"});
+		popMenu.setOnItemClickListener( this);
+       
 
-		tabHost.addTab(tabHost.newTabSpec("TAB1")
-                .setIndicator("TAB1")
-                .setContent(new Intent(this,chapter1.class)));
-		tabHost.addTab(tabHost.newTabSpec("TAB2")
-                .setIndicator("TAB2")
-                .setContent(new Intent(this,chapter2.class)));
-		tabHost.addTab(tabHost.newTabSpec("TAB3")
-                .setIndicator("TAB3")
-                .setContent(new Intent(this,chapter3.class)));
-		tabHost.addTab(tabHost.newTabSpec("TAB4")
-                .setIndicator("TAB4")
-                .setContent(new Intent(this,chapter4.class)));
-		tabHost.addTab(tabHost.newTabSpec("TAB5")
-                .setIndicator("TAB5")
-                .setContent(new Intent(this,chapter5.class)));
-	    group.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-			public void onCheckedChanged(RadioGroup group, int checkedId) {
-				switch (checkedId) {
-				case R.id.radio_button1:
-
-					tabHost.setCurrentTabByTag("TAB1");
-					
-					break;
-				case R.id.radio_button2:
-					tabHost.setCurrentTabByTag("TAB2");
-					break;
-				case R.id.radio_button3:
-					tabHost.setCurrentTabByTag("TAB3");
-					break;
-				case R.id.radio_button4:
-					tabHost.setCurrentTabByTag("TAB4");
-					break;
-				case R.id.radio_button5:
-					tabHost.setCurrentTabByTag("TAB5");
-					break;
-			    default:
-					break;
-				}
-			}
-		});
+    }
+    public void home(View v){
+		Intent i = new Intent(getApplicationContext(), MainActivity.class);
+		startActivity(i);
     }
 
+    public void onClick(View v) {
+		if(v.getId() == R.id.btn_title_popmenu){
+			popMenu.showAsDropDown(v);
+		}
+	}
 
+	public void onItemClick(int index) {
+		if(index == 0)
+		{
+			setContentView(R.layout.tk_chapter1);
+		}
+		if(index == 1)
+		{
+			setContentView(R.layout.tk_chapter2);
+		}
+		if(index == 2)
+		{
+			setContentView(R.layout.tk_chapter3);
+		}
+		if(index == 3)
+		{
+			setContentView(R.layout.tk_chapter4);
+		}
+		if(index == 4)
+		{
+			setContentView(R.layout.tk_chapter5);
+		}
+	}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,7 +77,18 @@ public class tao_kang extends TabActivity {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-    
+    public void setActionBarLayout( int layoutId ){
+		ActionBar actionBar = getActionBar( );
+		if( null != actionBar ){
+			actionBar.setDisplayShowHomeEnabled( false );
+			actionBar.setDisplayShowCustomEnabled(true);
+
+			LayoutInflater inflator = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			View v = inflator.inflate(layoutId, null);
+			ActionBar.LayoutParams layout = new ActionBar.LayoutParams(LayoutParams.FILL_PARENT, LayoutParams.FILL_PARENT);
+			actionBar.setCustomView(v,layout);
+		}
+	}
     
 }
 

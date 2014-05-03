@@ -55,11 +55,13 @@ public class MainActivity extends Activity implements OnGestureListener{
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
+		
 		mainActivity = this;
 		ActionBar bar = getActionBar();
+		bar.setDisplayShowTitleEnabled(false);
 		bar.setIcon(
 				   new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
 		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));

@@ -19,6 +19,8 @@ public class SponsorPage extends Activity {
 	    		return false;
 	    	}
 	    });
+	    wv.getSettings().setLoadWithOverviewMode(true);
+	    wv.getSettings().setUseWideViewPort(true);
 	    wv.loadUrl("http://www.ucsdcssa.org/sponsors/");
 	}
 }

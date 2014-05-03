@@ -112,7 +112,6 @@ public class manager {
 			else{
 				try{
 					FileOutputStream fos = MainActivity.mainActivity.openFileOutput(""+number+".png", Context.MODE_PRIVATE);
-		
 					// Writing the bitmap to the output stream
 					b.compress(Bitmap.CompressFormat.PNG, 100, fos);
 					fos.close();

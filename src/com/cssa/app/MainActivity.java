@@ -15,11 +15,13 @@ import com.cssa.app.qiu_rui_qing.qiu_rui_qing;
 import com.cssa.app.tao_kang.tao_kang;
 import com.cssa.app.webpages.*;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.app.ProgressDialog;
 
 import android.app.Activity;
 import android.content.Context;
@@ -47,11 +49,11 @@ public class MainActivity extends Activity implements OnGestureListener{
 	private Handler h; 
 	private GestureDetector FlipDetector;
 	//arraylist used to store list of images for animation purpose
-	private ArrayList<Bitmap> imgs =new ArrayList<Bitmap>();
+	public static ArrayList<Bitmap> imgs =new ArrayList<Bitmap>();
 	//index used in animation to indicate which image should be presenteed
 	private int index=0;
 	//view flipper for flip image on the top of the activity
-	private ViewFlipper viewFlipper;
+	public static ViewFlipper viewFlipper;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -72,15 +74,12 @@ public class MainActivity extends Activity implements OnGestureListener{
 		
 		h=new Handler();
 		//load imgresouces to variable imgs. 'hit' is an id that idicate which animation we want
-		loadImgResources("hit");
+		//loadImgResources("hit");
+		new GetTask(this).execute();
 		//find viewflipper from layout
 		viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper1);
-		//set all pictures in imgs to viewflipper for furthur gesture detection
-		for(int i=0;i<imgs.size();i++)
-		{
-		    //  This will create dynamic image view and add them to ViewFlipper
-		    setFlipperImage(imgs.get(i));
-		}
+		
+	
 	}
 	
 	/**
@@ -242,4 +241,42 @@ public class MainActivity extends Activity implements OnGestureListener{
 		return false;
 	}
 
+}
+class GetTask extends AsyncTask<Object, Void, ArrayList<Bitmap>> {
+    Context context;
+    ProgressDialog mDialog;
+    GetTask(Context context) {
+        this.context = context;
+    }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+
+        mDialog = new ProgressDialog(context);
+        mDialog.setMessage("Please wait...");
+        mDialog.show();
+    }
+
+    @Override
+    protected ArrayList<Bitmap> doInBackground(Object... params) {
+        // here you can get the details from db or web and fetch it..
+    	return (ArrayList<Bitmap>) manager.getManager().getImageList();
+    }
+
+    @Override
+    protected void onPostExecute(ArrayList<Bitmap> result) {
+        MainActivity.imgs = result;
+        mDialog.dismiss();
+      //set all pictures in imgs to viewflipper for furthur gesture detection
+        for(int i=0;i<MainActivity.imgs.size();i++)
+      	{
+        	//  This will create dynamic image view and add them to ViewFlipper
+      		ImageView image = new ImageView(context);
+    	    image.setImageBitmap(MainActivity.imgs.get(i));
+    	    //add that view to viewflipper
+    	    MainActivity.viewFlipper.addView(image);
+      	}
+        
+    }
 }

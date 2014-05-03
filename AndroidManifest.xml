@@ -12,13 +12,13 @@
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_circle"
-        android:label="CSSA"
-        android:theme="@style/AppBaseTheme" >
+        android:theme="@style/AppBaseTheme" 
+        android:label="CSSA">
         <!--  MainActivity Part -->
         <activity
             android:name="com.cssa.app.MainActivity"
-            android:label="" 
             android:screenOrientation="portrait"
+            android:label="CSSA"
              android:theme="@style/AppBaseTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,11 +32,7 @@
             android:name="com.cssa.app.tao_kang.tao_kang"
             android:label="" >    
         </activity>
-        <activity
-            android:name="com.example.newstudent.tab"
-            android:label="" >
-            
-        </activity>
+      
         <activity
             android:name="com.cssa.app.tao_kang.chapter1"
             android:label="" >
@@ -78,14 +74,8 @@
             android:name="com.cssa.app.qiu_rui_qing.qiu_rui_qing"          
             android:label="" >
         </activity>
-        <activity
-            android:name="com.cssa.app.qiu_rui_qing.PoolPage"
-            android:label="" >
-        </activity>
-        <activity
-            android:name="com.cssa.app.qiu_rui_qing.CitivasPage"
-            android:label="" >
-        </activity>
+      
+
         <activity
             android:name="com.cssa.app.qiu_rui_qing.ActivityList"
             android:label="">

@@ -8,13 +8,15 @@
         <!-- API 11 theme customizations can go here. -->
     </style>
 
-    <style name="MyTheme" parent="android:style/Theme.Holo">
-        <item name="android:actionBarStyle">@style/MyActionBarStyle</item>
+    <style name="TitlebarBackgroundStyle" >
+       <item name="android:background">@drawable/bbar_1080x144</item>
        
     </style>
 
-    <style name="MyActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
-         <item name="android:displayOptions">showHome</item>
+    <style name="Theme.MyCustomTheme" parent="android:Theme">
+ 	    <item name="android:windowTitleBackgroundStyle">@style/TitlebarBackgroundStyle</item>
+        <item name="android:windowTitleSize">45dp</item>
+        
     </style>
     
 

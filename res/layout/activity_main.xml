@@ -11,48 +11,52 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
-     <Button
-         android:id="@+id/button_qiu"
-         android:layout_width="160dp"
-         android:layout_height="160dp"
-         android:onClick="qiu_rui_qing"
-         android:text="recentAcitivity" />
+
+  <ViewFlipper
+        android:id="@+id/viewFlipper1"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" >
+
+    </ViewFlipper>
+ <Button
+        android:id="@+id/button_qiu"
+        android:layout_width="165dp"
+        android:layout_height="145dp"
+        android:contentDescription="recent activities"
+        android:layout_below="@+id/viewFlipper1"
+        android:onClick="qiu_rui_qing"
+        android:text="recentAcitivity" />
 
      <Button
-         android:id="@+id/button_tao"
-         android:layout_width="160dp"
-         android:layout_height="160dp"
-         android:layout_alignTop="@+id/button_qiu"
-         android:layout_toRightOf="@+id/button_qiu"
-         android:text="newStudent"
-         android:onClick="tao_kang"
-          />
+        android:id="@+id/button_tao"
+        android:layout_width="165dp"
+        android:layout_height="145dp"
+        android:layout_below="@+id/viewFlipper1"
+        android:layout_toRightOf="@+id/button_qiu"
+        android:onClick="tao_kang"
+        android:text="newStudent" />
+   
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="165dp"
+        android:layout_height="145dp"
+        android:layout_below="@+id/button_qiu"
+        android:onClick="Food2Cssa"
+        android:text="FoodToCssa" />
 
-     <Button
-         android:id="@+id/button_hu"
-         android:layout_width="160dp"
-         android:layout_height="160dp"
-         android:layout_alignLeft="@+id/button_tao"
-         android:layout_below="@+id/button_tao"
-         android:onClick="hu_jia_ying"
-         android:text="sponsor" 
-         />
+    <Button
+        android:id="@+id/button_hu"
+        android:layout_width="165dp"
+        android:layout_height="145dp"
+        android:layout_below="@+id/button_qiu"
+        android:layout_toRightOf="@+id/button4"
+        android:layout_alignRight="@+id/button_tao"
+        android:onClick="hu_jia_ying"
+        android:text="sponsor" />
 
-     <Button
-         android:id="@+id/button4"
-         android:layout_width="160dp"
-         android:layout_height="160dp"
-         android:layout_alignLeft="@+id/button_qiu"
-         android:layout_alignTop="@+id/button_hu"
-         android:onClick="Food2Cssa"
-         android:text="FoodToCssa" />
 
-     <ViewFlipper
-         android:id="@+id/viewFlipper1"
-         android:layout_width="fill_parent"
-         android:layout_height="300dp"
-         android:layout_alignLeft="@+id/button4"
-         android:layout_below="@+id/button_hu" >
-     </ViewFlipper>
+  
 
 </RelativeLayout>

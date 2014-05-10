@@ -16,14 +16,21 @@ import org.json.JSONException;
 
 
 import org.json.JSONException;
+
+
+
 import com.cssa.app.DAO;
 import com.cssa.app.R;
-import com.cssa.app.qiu_rui_qing.StableArrayAdapter.Simple_Activity_Holder;
+import com.fima.cardsui.objects.CardStack;
+//import com.cssa.app.qiu_rui_qing.StableArrayAdapter.Simple_Activity_Holder;
+import com.fima.cardsui.views.CardUI;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,11 +44,84 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class qiu_rui_qing extends Activity {
-  @Override
-protected void onCreate(Bundle savedInstanceState) {
+	private CardUI mCardView;
+  protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.qrq_activity_list);
+
+	// init CardView
+	mCardView = (CardUI) findViewById(R.id.cardsview);
+	mCardView.setSwipeable(true);
+
+	CardStack stack2 = new CardStack();
+	stack2.setTitle("REGULAR CARDS");
+	mCardView.addStack(stack2);
+
+	// add AndroidViews Cards
+	mCardView.addCard(new MyCard("Get the CardsUI view"));
+	mCardView.addCardToLastStack(new MyCard("for Android at"));
+	MyCard androidViewsCard = new MyCard("www.androidviews.net");
+	androidViewsCard.setOnClickListener(new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent(Intent.ACTION_VIEW);
+			intent.setData(Uri.parse("http://www.androidviews.net/"));
+			startActivity(intent);
+
+		}
+	});
+	/*androidViewsCard.setOnLongClickListener(new OnLongClickListener() {    		
+		
+		@Override
+		public boolean onLongClick(View v) {
+			Toast.makeText(v.getContext(), "This is a long click", Toast.LENGTH_SHORT).show();
+			return true;
+		}
+	
+	});*/
+	Intent intent = new Intent(Intent.ACTION_VIEW);
+	intent.setData(Uri.parse("http://www.androidviews.net/"));
+
+	mCardView.addCardToLastStack(androidViewsCard);
+
+	CardStack stackPlay = new CardStack();
+	stackPlay.setTitle("GOOGLE PLAY CARDS");
+	mCardView.addStack(stackPlay);
+
+	// add one card, and then add another one to the last stack.
+	mCardView.addCard(new MyCard("Google Play Cards"));
+	mCardView.addCardToLastStack(new MyCard("By Androguide & GadgetCheck"));
+
+	mCardView.addCardToLastStack(new MyPlayCard("Google Play",
+			"This card mimics the new Google play cards look", "#33b6ea",
+			"#33b6ea", true, false));
+
+	mCardView
+			.addCardToLastStack(new MyPlayCard(
+					"Menu Overflow",
+					"The PlayCards allow you to easily set a menu overflow on your card.\nYou can also declare the left stripe's color in a String, like \"#33B5E5\" for the holo blue color, same for the title color.",
+					"#e00707", "#e00707", false, true));
+
+	// add one card
+	mCardView
+			.addCard(new MyPlayCard(
+					"Different Colors for Title & Stripe",
+					"You can set any color for the title and any other color for the left stripe",
+					"#f2a400", "#9d36d0", false, false));
+
+	mCardView
+			.addCardToLastStack(new MyPlayCard(
+					"Set Clickable or Not",
+					"You can easily implement an onClickListener on any card, but the last boolean parameter of the PlayCards allow you to toggle the clickable background.",
+					"#4ac925", "#222222", true, true));
+
+	// draw cards
+	mCardView.refresh();
+  }
     
+    
+    /*
     final ListView listview = (ListView)findViewById(R.id.listview);
     recent_activity r_a = manager.getManager().getNextPageRecentActivity(10);
 
@@ -61,9 +141,9 @@ protected void onCreate(Bundle savedInstanceState) {
             startActivity(intent); 
           }
 
-        });
-    }
+        });*/
 }
+
 class StableArrayAdapter extends ArrayAdapter<simple_activity_detail> {
 
   int layoutResourceId;

@@ -29,6 +29,7 @@ public class DAO
   public static final String URL = "http://ucsdcssaapp.appspot.com/";
   public static final String IMAGEURL = "http://z.bvcx.org/cssa/geturl.txt";
   public static final String VERSIONURL = "http://z.bvcx.org/cssa/version.txt";
+  public static final String UCSD_EVENT = "http://z.bvcx.org/cssa/event/output";
   /**
    * Public constructor for DAO
    */

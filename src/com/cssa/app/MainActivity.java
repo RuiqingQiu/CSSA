@@ -14,6 +14,7 @@ import com.cssa.app.R;
 import com.cssa.app.qiu_rui_qing.qiu_rui_qing;
 import com.cssa.app.tao_kang.tao_kang;
 import com.cssa.app.webpages.*;
+import com.fima.cardsui.views.CardUI;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -54,14 +55,12 @@ public class MainActivity extends Activity implements OnGestureListener{
 	private int index=0;
 	//view flipper for flip image on the top of the activity
 	public static ViewFlipper viewFlipper;
-	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-
 		mainActivity = this;
-		ActionBar bar = getActionBar();
+		ActionBar bar = getActionBar(); 
 		bar.setIcon(
 				   new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
 		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));

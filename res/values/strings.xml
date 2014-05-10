@@ -4,6 +4,12 @@
     <string name="app_name">CSSA</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">CardsUI</string>
+    <string name="title">Title</string>
+    <string name="desc">Description</string>
+	<string name="overflow">Menu Overflow</string>
+	<string name="color_stripe">Color Stripe</string>
     <string name="pool_info">UCSD CSSA 一年一度桌球比赛</string>
   	<string name="pool_title">UCSD CSSA 桌球赛</string>
   	<string name="civitas_info">

@@ -11,7 +11,7 @@
     android:orientation="vertical"
     tools:context=".MainActivity" >
 
-
+  
   <ViewFlipper
         android:id="@+id/viewFlipper1"
         android:layout_width="fill_parent"
@@ -19,8 +19,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true" >
 
-    </ViewFlipper>
- <Button
+  </ViewFlipper>
+  <Button
         android:id="@+id/button_qiu"
         android:layout_width="165dp"
         android:layout_height="145dp"
@@ -28,7 +28,7 @@
         android:layout_below="@+id/viewFlipper1"
         android:onClick="qiu_rui_qing"
         android:text="recentAcitivity" />
-
+	
      <Button
         android:id="@+id/button_tao"
         android:layout_width="165dp"

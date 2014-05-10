@@ -18,7 +18,6 @@ import org.json.JSONException;
 import org.json.JSONException;
 
 
-
 import com.cssa.app.DAO;
 import com.cssa.app.R;
 import com.fima.cardsui.objects.CardStack;
@@ -117,6 +116,53 @@ public class qiu_rui_qing extends Activity {
 					"#4ac925", "#222222", true, true));
 
 	// draw cards
+	
+    recent_activity r_a = manager.getManager().getNextPageRecentActivity(10);
+    List<simple_activity_detail> lst = r_a.getList();
+    for(int i = 0; i < lst.size(); i++){
+    	MyPlayCard tmp = null;
+    	switch(i % 4){
+    	case 0:
+    		tmp = new MyPlayCard(
+				lst.get(i).getTitle(),
+				lst.get(i).getIntoduction(),
+				"#4ac925", "#222222", true, true);
+    		break;
+    	case 1:
+    		tmp = new MyPlayCard(
+    				lst.get(i).getTitle(),
+    				lst.get(i).getIntoduction(),
+    				"#f2a400", "#9d36d0", true, true);
+    		break;
+    	case 2:
+    		tmp = new MyPlayCard(
+    				lst.get(i).getTitle(),
+    				lst.get(i).getIntoduction(),
+    				"#e00707", "#e00707", true, true);
+    		break;
+    	case 3: 
+    		tmp = new MyPlayCard(
+    				lst.get(i).getTitle(),
+    				lst.get(i).getIntoduction(),
+    				"#33b6ea","#33b6ea", true, true);
+    		break;
+    	}
+    	final String id = lst.get(i).getId();
+    	tmp.setOnClickListener(new OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(getApplicationContext(), ActivityDetailView.class);
+	        	Bundle bundle = new Bundle();
+	            bundle.putString("com.cssa.app.id", id);
+	        	intent.putExtras(bundle);
+	            startActivity(intent); 
+			}
+    		
+    	});
+    	mCardView.addCardToLastStack(tmp);
+    }
+	
 	mCardView.refresh();
   }
     
@@ -141,7 +187,8 @@ public class qiu_rui_qing extends Activity {
             startActivity(intent); 
           }
 
-        });*/
+        });
+     */
 }
 
 class StableArrayAdapter extends ArrayAdapter<simple_activity_detail> {

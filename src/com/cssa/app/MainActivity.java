@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 import managerLayer.manager;
 
-
 import com.cssa.app.R;
 import com.cssa.app.qiu_rui_qing.qiu_rui_qing;
 import com.cssa.app.tao_kang.tao_kang;
@@ -23,7 +22,6 @@ import android.os.StrictMode;
 import android.annotation.SuppressLint;
 import android.app.ActionBar;
 import android.app.ProgressDialog;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -40,6 +38,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
 
@@ -55,15 +55,17 @@ public class MainActivity extends Activity implements OnGestureListener{
 	private int index=0;
 	//view flipper for flip image on the top of the activity
 	public static ViewFlipper viewFlipper;
+	public ImageButton buttonOnMainPage; 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		mainActivity = this;
-		ActionBar bar = getActionBar(); 
+		ActionBar bar = getActionBar();
+		bar.setDisplayShowTitleEnabled(false); 
 		bar.setIcon(
 				   new ColorDrawable(getResources().getColor(android.R.color.transparent))); 
-		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bbar_1080x144));
+		bar.setBackgroundDrawable(getResources().getDrawable(R.drawable.bar));
 
 
 		FlipDetector = new GestureDetector(this,this);
@@ -76,7 +78,8 @@ public class MainActivity extends Activity implements OnGestureListener{
 		//loadImgResources("hit");
 		new GetTask(this).execute();
 		//find viewflipper from layout
-		viewFlipper = (ViewFlipper) findViewById(R.id.viewFlipper1);
+		viewFlipper = (ViewFlipper) findViewById(R.id.vf);
+		buttonOnMainPage = (ImageButton)findViewById(R.id.button_qiu);
 		
 	
 	}
@@ -168,15 +171,14 @@ public class MainActivity extends Activity implements OnGestureListener{
         int contentViewTop= 
             window.findViewById(Window.ID_ANDROID_CONTENT).getTop();
         int TitleBarHeight= contentViewTop - StatusBarHeight;
-        float y=TitleBarHeight+StatusBarHeight+viewFlipper.getHeight();
-        Log.e("Y",String.valueOf(y));
-        
+        float y=TitleBarHeight+StatusBarHeight+buttonOnMainPage.getHeight()*2;
+    
         //call animation if a fling occured in that certain area
         if (Math.abs(downXValue - currentX) > Math.abs(downYValue
                 - currentY)) {
-
+        	
             // going backwards: pushing stuff to the right
-            if (downXValue < currentX && downYValue<=y && downYValue>=contentViewTop) {
+            if (downXValue <= currentX && downYValue>y && downYValue>=contentViewTop) {
         		viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.right_out));
                 viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.left_in));
         		viewFlipper.showPrevious();
@@ -184,7 +186,7 @@ public class MainActivity extends Activity implements OnGestureListener{
             }
 
             // going forwards: pushing stuff to the left
-            if (downXValue > currentX && downYValue<=y && downYValue>=contentViewTop) {
+           if (downXValue > currentX && downYValue>y && downYValue>=contentViewTop) {
         		viewFlipper.setInAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.right_in));
                 viewFlipper.setOutAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.animator.left_out));
         		viewFlipper.showNext();
@@ -192,7 +194,7 @@ public class MainActivity extends Activity implements OnGestureListener{
 
             }
 
-        } else {
+        } /**else {
             
             if (downYValue < currentY) {
             	//TextView text = (TextView)findViewById(R.id.textView2);
@@ -204,7 +206,7 @@ public class MainActivity extends Activity implements OnGestureListener{
         		//text.setText("hit up");
 
             }
-        }
+        }**/
 		return false;
 	}
 

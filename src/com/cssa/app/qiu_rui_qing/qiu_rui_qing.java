@@ -56,37 +56,82 @@ public class qiu_rui_qing extends Activity {
 	CardStack titleStack = new CardStack();
 	titleStack.setTitle("Recent Activity");
 	mCardView.addStack(titleStack, true);
-
     recent_activity r_a = manager.getManager().getNextPageRecentActivity(10);
     List<simple_activity_detail> lst = r_a.getList();
     for(int i = 0; i < lst.size(); i++){
     	MyPlayCard tmp = null;
+    	
     	switch(i % 4){
-    	case 0:
-    		tmp = new MyPlayCard(
-				lst.get(i).getTitle(),
-				lst.get(i).getIntoduction(),
-				"#4ac925", "#222222", true, true);
-    		break;
-    	case 1:
-    		tmp = new MyPlayCard(
-    				lst.get(i).getTitle(),
-    				lst.get(i).getIntoduction(),
-    				"#f2a400", "#9d36d0", true, true);
-    		break;
-    	case 2:
-    		tmp = new MyPlayCard(
-    				lst.get(i).getTitle(),
-    				lst.get(i).getIntoduction(),
-    				"#e00707", "#e00707", true, true);
-    		break;
-    	case 3: 
-    		tmp = new MyPlayCard(
-    				lst.get(i).getTitle(),
-    				lst.get(i).getIntoduction(),
-    				"#33b6ea","#33b6ea", true, true);
-    		break;
-    	}
+    	    	case 0:
+    	     		tmp = new MyPlayCard(
+    	 				lst.get(i).getTitle(),
+    	 				lst.get(i).getIntoduction(),
+    	 				"#4ac925", "#222222", true, true);
+    	     		break;
+    	     	case 1:
+    	     		tmp = new MyPlayCard(
+    	     				lst.get(i).getTitle(),
+    	     				lst.get(i).getIntoduction(),
+    	     				"#f2a400", "#9d36d0", true, true);
+    	    		break;
+    	     	case 2:
+    	     		tmp = new MyPlayCard(
+    	     				lst.get(i).getTitle(),
+    	     				lst.get(i).getIntoduction(),
+    	     				"#e00707", "#e00707", true, true);
+    	     		break;
+    	     	case 3: 
+    	     		tmp = new MyPlayCard(
+    	     				lst.get(i).getTitle(),
+    	     				lst.get(i).getIntoduction(),
+    	     				"#33b6ea","#33b6ea", true, true);
+    	     		break;
+    	     	}
+    	
+    	/*switch(i % 7){
+	    	case 0:
+	    		tmp = new MyPlayCard(
+					lst.get(i).getTitle(),
+					lst.get(i).getIntoduction(),
+					"red", "#1e1e1e", true, true);
+	    		break;
+	    	case 1:
+	    		tmp = new MyPlayCard(
+	    				lst.get(i).getTitle(),
+	    				lst.get(i).getIntoduction(),
+	    				"#ff6633", "#9d36d0", true, true);
+	    		break;
+	    	case 2:
+	    		tmp = new MyPlayCard(
+	    				lst.get(i).getTitle(),
+	    				lst.get(i).getIntoduction(),
+	    				"yellow", "#e00707", true, true);
+	    		break;
+	    	case 3: 
+	    		tmp = new MyPlayCard(
+	    				lst.get(i).getTitle(),
+	    				lst.get(i).getIntoduction(),
+	    				"green","#33b6ea", true, true);
+	    		break;
+	    	case 4: 
+	    		tmp = new MyPlayCard(
+	    				lst.get(i).getTitle(),
+	    				lst.get(i).getIntoduction(),
+	    				"cyan","#33b6ea", true, true);
+	    		break;
+	    	case 5: 
+	    		tmp = new MyPlayCard(
+	    				lst.get(i).getTitle(),
+	    				lst.get(i).getIntoduction(),
+	    				"blue","#33b6ea", true, true);
+	    		break;
+	    	case 6: 
+	    		tmp = new MyPlayCard(
+	    				lst.get(i).getTitle(),
+	    				lst.get(i).getIntoduction(),
+	    				"purple","#33b6ea", true, true);
+	    		break;
+    	}*/
     	final String id = lst.get(i).getId();
     	tmp.setOnClickListener(new OnClickListener(){
 			@Override
@@ -115,7 +160,6 @@ public class qiu_rui_qing extends Activity {
 	
 	mCardView.addCardToLastStack(tmp);
 	tmp.setOnClickListener(new OnClickListener(){
-		@Override
 		public void onClick(View arg0) {
 			// TODO Auto-generated method stub
 			refresh();
@@ -223,52 +267,3 @@ public class qiu_rui_qing extends Activity {
      */
 }
 
-class StableArrayAdapter extends ArrayAdapter<simple_activity_detail> {
-
-  int layoutResourceId;
-  List<simple_activity_detail> s_a_list;
-  Context context;
-
-  public StableArrayAdapter(Context context, int layoutResourceId,
-	        List<simple_activity_detail> objects) {
-	super(context, layoutResourceId, objects);
-	this.layoutResourceId = layoutResourceId;
-	s_a_list = objects;
-	this.context =context;
-  }
-  
-  
-  @Override
-  public View getView(int position, View convertView, ViewGroup parent) {
-      View row = convertView;
-      Simple_Activity_Holder holder = null;
-      
-      if(row == null)
-      {
-          LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-          row = inflater.inflate(layoutResourceId, parent, false);
-          
-          holder = new Simple_Activity_Holder();
-          holder.imgIcon = (ImageView)row.findViewById(R.id.imgIcon);
-          holder.txtTitle = (TextView)row.findViewById(R.id.txtTitle);
-          
-          row.setTag(holder);
-      }
-      else
-      {
-          holder = (Simple_Activity_Holder)row.getTag();
-      }
-      
-      simple_activity_detail detail = s_a_list.get(position);
-      holder.txtTitle.setText(detail.toDisplayFormat());
-      //holder.imgIcon.setImageResource();
-      
-      return row;
-  }
-  
-  static class Simple_Activity_Holder
-  {
-	  TextView txtTitle;
-	  ImageView imgIcon;
-  }
-}

@@ -3,7 +3,6 @@ package com.cssa.app.qiu_rui_qing;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.fima.cardsui.objects.RecyclableCard;
 import com.cssa.app.R;
 

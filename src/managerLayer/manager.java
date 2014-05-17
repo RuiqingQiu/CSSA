@@ -39,7 +39,7 @@ public class manager {
 	public final static String VERSION_FILENAME = "version_file";
 	private int cursorOfActivity;
 	//Print 14 numbers of images. offset 1
-	public int IMAGE_NUMBERS = 8;
+	public int IMAGE_NUMBERS = 5;
 
     
 	private manager(){

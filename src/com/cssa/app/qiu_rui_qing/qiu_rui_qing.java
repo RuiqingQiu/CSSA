@@ -51,16 +51,43 @@ public class qiu_rui_qing extends Activity {
 	// init CardView
 	mCardView = (CardUI) findViewById(R.id.cardsview);
 	mCardView.setSwipeable(true);
-
-	CardStack stackPlay = new CardStack();
-	stackPlay.setTitle("UCSD Events");
-	mCardView.addStack(stackPlay);
-	// draw cards	
+	
+	CardStack titleStack = new CardStack();
+	titleStack.setTitle("Recent Activity");
+	mCardView.addStack(titleStack, true);
     recent_activity r_a = manager.getManager().getNextPageRecentActivity(10);
     List<simple_activity_detail> lst = r_a.getList();
     for(int i = 0; i < lst.size(); i++){
     	MyPlayCard tmp = null;
-    	switch(i % 7){
+    	
+    	switch(i % 4){
+    	    	case 0:
+    	     		tmp = new MyPlayCard(
+    	 				lst.get(i).getTitle(),
+    	 				lst.get(i).getIntoduction(),
+    	 				"#4ac925", "#222222", true, true);
+    	     		break;
+    	     	case 1:
+    	     		tmp = new MyPlayCard(
+    	     				lst.get(i).getTitle(),
+    	     				lst.get(i).getIntoduction(),
+    	     				"#f2a400", "#9d36d0", true, true);
+    	    		break;
+    	     	case 2:
+    	     		tmp = new MyPlayCard(
+    	     				lst.get(i).getTitle(),
+    	     				lst.get(i).getIntoduction(),
+    	     				"#e00707", "#e00707", true, true);
+    	     		break;
+    	     	case 3: 
+    	     		tmp = new MyPlayCard(
+    	     				lst.get(i).getTitle(),
+    	     				lst.get(i).getIntoduction(),
+    	     				"#33b6ea","#33b6ea", true, true);
+    	     		break;
+    	     	}
+    	
+    	/*switch(i % 7){
 	    	case 0:
 	    		tmp = new MyPlayCard(
 					lst.get(i).getTitle(),
@@ -103,7 +130,7 @@ public class qiu_rui_qing extends Activity {
 	    				lst.get(i).getIntoduction(),
 	    				"purple","#33b6ea", true, true);
 	    		break;
-    	}
+    	}*/
     	final String id = lst.get(i).getId();
     	tmp.setOnClickListener(new OnClickListener(){
 			@Override
@@ -117,6 +144,8 @@ public class qiu_rui_qing extends Activity {
 			}
     		
     	});
+    	CardStack tempStack = new CardStack();
+    	mCardView.addStack(tempStack, true);
     	mCardView.addCardToLastStack(tmp);
     }
 	

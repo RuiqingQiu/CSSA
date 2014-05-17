@@ -40,7 +40,7 @@ public class manager {
 	private int cursorOfActivity;
 	//Print 14 numbers of images. offset 1
 	public int IMAGE_NUMBERS = 5;
-
+	private int index = 0;
     
 	private manager(){
 		dao=new DAO();
@@ -164,12 +164,23 @@ public class manager {
 	public recent_activity getNextPageRecentActivity(int count){
 		recent_activity r_a = null;
 		try {
-			r_a = dao.get_simple_activity_detail_by_index(1);
+			//index = 0;
+			r_a = dao.get_simple_activity_detail_by_index(index,count);
+			if(r_a.getList().size()<count){
+				
+			}else{
+				index+=count;
+			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return r_a;
+	}
+	
+	public void reset(){
+		
+		this.index = 0;
 	}
 	
 	public freshman101 getFreshman101(){

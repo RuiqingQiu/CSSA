@@ -34,9 +34,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 public class ActivityList extends Activity {
-  @Override
-
-
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     

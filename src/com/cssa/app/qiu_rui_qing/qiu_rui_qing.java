@@ -41,6 +41,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class qiu_rui_qing extends Activity {
 	private CardUI mCardView;
@@ -170,13 +171,18 @@ public class qiu_rui_qing extends Activity {
     
     
   public void refresh(){
-	  mCardView.clearCards();
-	  CardStack titleStack = new CardStack();
-		titleStack.setTitle("Recent Activity");
-		mCardView.addStack(titleStack, true);
-
 	    recent_activity r_a = manager.getManager().getNextPageRecentActivity(10);
 	    List<simple_activity_detail> lst = r_a.getList();
+	    if(lst.size()==0){
+	    	Toast.makeText(this, "No More Event.", 
+	                               Toast.LENGTH_SHORT).show();
+	 
+	    	return;
+	    }
+		mCardView.clearCards();
+		CardStack titleStack = new CardStack();
+		titleStack.setTitle("Recent Activity");
+		mCardView.addStack(titleStack, true);
 	    for(int i = 0; i < lst.size(); i++){
 	    	MyPlayCard tmp = null;
 	    	switch(i % 4){

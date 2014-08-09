@@ -103,6 +103,10 @@ public class manager {
 		 //Bitmap decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 		 return image;
 	}
+	public void resetIndex()
+	{
+		index = 0;
+	}
 	public void addImagesToFiles(List<Bitmap> imgs){
 		int number = 1;
 		for(Bitmap b : imgs){

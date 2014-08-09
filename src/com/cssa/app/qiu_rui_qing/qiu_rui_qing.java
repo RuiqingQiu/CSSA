@@ -64,7 +64,7 @@ public class qiu_rui_qing extends Activity {
     	    	case 0:
     	     		tmp = new MyPlayCard(
     	 				lst.get(i).getTitle(),
-    	 				lst.get(i).getDate() + "\n" +
+    	 				lst.get(i).getDate() + "\n" + 
     	 				lst.get(i).getIntoduction(),
     	 				"#4ac925", "#222222", true, true);
     	     		break;

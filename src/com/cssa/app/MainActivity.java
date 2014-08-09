@@ -96,6 +96,7 @@ public class MainActivity extends Activity implements OnGestureListener{
 	
 	/**--------------------------QIU_RUI_QING-----------------------**/
 	public void qiu_rui_qing(View v) {
+		manager.getManager().resetIndex();
 		Intent i = new Intent(getApplicationContext(), qiu_rui_qing.class);
 		startActivity(i);
 	}

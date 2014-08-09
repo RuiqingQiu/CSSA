@@ -27,9 +27,9 @@ public class DAO
 {
   public static final String SERVERURL = "http://hello-zhaoyang-udacity.appspot.com/CSSA";
   public static final String URL = "http://ucsdcssaapp.appspot.com/";
-  public static final String IMAGEURL = "http://zinsser.me/cssa/geturl.txt";
-  public static final String VERSIONURL = "http://zinsser.me/cssa/version.txt";
-  public static final String UCSD_EVENT = "http://zinsser.me/cssa/event/output";
+  public static final String IMAGEURL = "http://z.bvcx.org/cssa/geturl.txt";
+  public static final String VERSIONURL = "http://z.bvcx.org/cssa/version.txt";
+  public static final String UCSD_EVENT = "http://z.bvcx.org/cssa/event/output";
   /**
    * Public constructor for DAO
    */
@@ -168,7 +168,7 @@ public class DAO
    * @return
    * @throws JSONException
    */
-  public recent_activity get_simple_activity_detail_by_index(int index, int num) throws JSONException
+  public recent_activity get_simple_activity_detail_by_index(int index) throws JSONException
   {
 	  String response="";
 	  String urlarg = "app";
@@ -183,19 +183,9 @@ public class DAO
 	  try{
 		  JSONObject mainObject = new JSONObject(response);
 		  JSONArray jarray = mainObject.getJSONArray("activity");
-		  int len = 0;
-		  if((index+num)>jarray.length()){
-			  len = jarray.length();
-		  }else{
-			  len = index+num;
-		  }
-		  Log.e("len", String.valueOf(len));
-		  Log.e("index", String.valueOf(index));
-		  //11
-		  for(int i = index; i < len; i++){
+		  for(int i = 0; i < jarray.length(); i++){
 			  JSONObject o = jarray.getJSONObject(i);
 			  String id = o.getString("id");
-			  //Log.e("id",id);
 			  String eventDate = o.getString("activityDate");
 			  String image = o.getString("image");
 			  String introduction = o.getString("intro");

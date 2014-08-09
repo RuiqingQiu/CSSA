@@ -88,6 +88,7 @@ public class qiu_rui_qing extends Activity {
     	     				"#33b6ea","#33b6ea", true, true);
     	     		break;
     	     	}
+    			//Color changes
     	
     	/*switch(i % 7){
 	    	case 0:

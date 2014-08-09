@@ -27,9 +27,9 @@ public class DAO
 {
   public static final String SERVERURL = "http://hello-zhaoyang-udacity.appspot.com/CSSA";
   public static final String URL = "http://ucsdcssaapp.appspot.com/";
-  public static final String IMAGEURL = "http://z.bvcx.org/cssa/geturl.txt";
-  public static final String VERSIONURL = "http://z.bvcx.org/cssa/version.txt";
-  public static final String UCSD_EVENT = "http://z.bvcx.org/cssa/event/output";
+  public static final String IMAGEURL = "http://zinsser.me/cssa/geturl.txt";
+  public static final String VERSIONURL = "http://zinsser.me/cssa/version.txt";
+  public static final String UCSD_EVENT = "http://zinsser.me/cssa/event/output";
   /**
    * Public constructor for DAO
    */

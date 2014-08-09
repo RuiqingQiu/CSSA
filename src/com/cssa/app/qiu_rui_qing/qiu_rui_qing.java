@@ -67,25 +67,25 @@ public class qiu_rui_qing extends Activity {
     	     		tmp = new MyPlayCard(
     	 				lst.get(i).getTitle(),
     	 				lst.get(i).getIntoduction(),
-    	 				"#ff0000", "#ff0000", true, true);
+    	 				"#ff6347", "#ff6347", true, true);
     	     		break;
     	     	case 1:
     	     		tmp = new MyPlayCard(
     	     				lst.get(i).getTitle(),
     	     				lst.get(i).getIntoduction(),
-    	     				"#ee0000", "#ee0000", true, true);
+    	     				"#ee5c42", "#ee5c42", true, true);
     	    		break;
     	     	case 2:
     	     		tmp = new MyPlayCard(
     	     				lst.get(i).getTitle(),
     	     				lst.get(i).getIntoduction(),
-    	     				"#cd0000", "#cd0000", true, true);
+    	     				"#cd4f39", "#cd4f39", true, true);
     	     		break;
     	     	case 3: 
     	     		tmp = new MyPlayCard(
     	     				lst.get(i).getTitle(),
     	     				lst.get(i).getIntoduction(),
-    	     				"#8b0000","#8b0000", true, true);
+    	     				"#8b3626","#8b3626", true, true);
     	     		break;
     	     	}
     	

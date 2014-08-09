@@ -89,50 +89,7 @@ public class qiu_rui_qing extends Activity {
     	     		break;
     	     	}
     	
-    	/*switch(i % 7){
-	    	case 0:
-	    		tmp = new MyPlayCard(
-					lst.get(i).getTitle(),
-					lst.get(i).getIntoduction(),
-					"red", "#1e1e1e", true, true);
-	    		break;
-	    	case 1:
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"#ff6633", "#9d36d0", true, true);
-	    		break;
-	    	case 2:
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"yellow", "#e00707", true, true);
-	    		break;
-	    	case 3: 
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"green","#33b6ea", true, true);
-	    		break;
-	    	case 4: 
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"cyan","#33b6ea", true, true);
-	    		break;
-	    	case 5: 
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"blue","#33b6ea", true, true);
-	    		break;
-	    	case 6: 
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"purple","#33b6ea", true, true);
-	    		break;
-    	}*/
+
     	final String id = lst.get(i).getId();
     	tmp.setOnClickListener(new OnClickListener(){
 			@Override

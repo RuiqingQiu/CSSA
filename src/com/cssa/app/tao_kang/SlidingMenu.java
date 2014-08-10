@@ -10,7 +10,6 @@ public class SlidingMenu extends RelativeLayout {
 	private SlidingView mSlidingView;
 	private View mLeftView;
 	private View mRightView;
-	boolean forward = true; 
 	// menu width
 	private int alignScreenWidth;
 
@@ -56,13 +55,12 @@ public class SlidingMenu extends RelativeLayout {
 		mSlidingView.setRightView(mRightView);
 	}
 
-	/**public void showLeftView() {
-		mSlidingView.showLeftView();
-	}**/
+	public void showLeftView() {
+		//mSlidingView.showLeftView();
+	}
 
 	public void showRightView() {
 		mSlidingView.showRightView();
-		forward = !forward;
 	}
 
 	public void showCenterView() {

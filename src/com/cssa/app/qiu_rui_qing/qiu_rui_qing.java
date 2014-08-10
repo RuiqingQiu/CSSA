@@ -67,25 +67,25 @@ public class qiu_rui_qing extends Activity {
     	     		tmp = new MyPlayCard(
     	 				lst.get(i).getTitle(),
     	 				lst.get(i).getIntoduction(),
-    	 				"#4ac925", "#222222", true, true);
+    	 				"#ff6347", "#ff63471", true, true);
     	     		break;
     	     	case 1:
     	     		tmp = new MyPlayCard(
     	     				lst.get(i).getTitle(),
     	     				lst.get(i).getIntoduction(),
-    	     				"#f2a400", "#9d36d0", true, true);
+    	     				"#ee5c42", "#ee5c42", true, true);
     	    		break;
     	     	case 2:
     	     		tmp = new MyPlayCard(
     	     				lst.get(i).getTitle(),
     	     				lst.get(i).getIntoduction(),
-    	     				"#e00707", "#e00707", true, true);
+    	     				"#cd4f39", "#cd4f39", true, true);
     	     		break;
     	     	case 3: 
     	     		tmp = new MyPlayCard(
     	     				lst.get(i).getTitle(),
     	     				lst.get(i).getIntoduction(),
-    	     				"#33b6ea","#33b6ea", true, true);
+    	     				"#8b3626","#8b3626", true, true);
     	     		break;
     	     	}
     			//Color changes
@@ -191,25 +191,25 @@ public class qiu_rui_qing extends Activity {
 	    		tmp = new MyPlayCard(
 					lst.get(i).getTitle(),
 					lst.get(i).getIntoduction(),
-					"#4ac925", "#222222", true, true);
+					"#ff6347", "#ff6347", true, true);
 	    		break;
 	    	case 1:
 	    		tmp = new MyPlayCard(
 	    				lst.get(i).getTitle(),
 	    				lst.get(i).getIntoduction(),
-	    				"#f2a400", "#9d36d0", true, true);
+	    				"#ee5c42", "#ee5c42", true, true);
 	    		break;
 	    	case 2:
 	    		tmp = new MyPlayCard(
 	    				lst.get(i).getTitle(),
 	    				lst.get(i).getIntoduction(),
-	    				"#e00707", "#e00707", true, true);
+	    				"#cd4f39", "#cd4f39", true, true);
 	    		break;
 	    	case 3: 
 	    		tmp = new MyPlayCard(
 	    				lst.get(i).getTitle(),
 	    				lst.get(i).getIntoduction(),
-	    				"#33b6ea","#33b6ea", true, true);
+	    				"#8b3626","#8b3626", true, true);
 	    		break;
 	    	}
 	    	final String id = lst.get(i).getId();
@@ -236,7 +236,7 @@ public class qiu_rui_qing extends Activity {
 		MyPlayCard tmp = new MyPlayCard(
 				"get next 10 event!"
 				,"",
-				"#33b6ea","#33b6ea", false, true);
+				"#8b795e","#8b795e", false, true);
 		
 		mCardView.addCardToLastStack(tmp);
 		tmp.setOnClickListener(new OnClickListener(){

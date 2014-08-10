@@ -12,43 +12,43 @@
 
     <ImageButton
         android:id="@+id/button_qiu"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="155dp"
+        android:layout_height="155dp"
         android:background="@drawable/button_event"
         android:contentDescription="recent activities"
         android:onClick="qiu_rui_qing"
         android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
         android:text="recentAcitivity" />
 
      <ImageButton
         android:id="@+id/button_tao"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="155dp"
+        android:layout_height="155dp"
         android:layout_toRightOf="@+id/button_qiu"
         android:onClick="tao_kang"
         android:text="newStudent" 
         android:layout_marginLeft="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_marginTop="5dp"
         android:background="@drawable/button_freshman101"/>
    
     <ImageButton
         android:id="@+id/button4"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="155dp"
+        android:layout_height="155dp"
         android:layout_below="@+id/button_qiu"
         android:onClick="Food2Cssa"
         android:text="FoodToCssa" 
         android:layout_marginRight="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
         android:background="@drawable/button_food2cssa"/>
 
     <ImageButton
         android:id="@+id/button_hu"
-        android:layout_width="160dp"
-        android:layout_height="160dp"
+        android:layout_width="155dp"
+        android:layout_height="155dp"
         android:layout_below="@+id/button_qiu"
         android:layout_toRightOf="@+id/button4"
         android:layout_alignRight="@+id/button_tao"
@@ -61,6 +61,7 @@
 
      <ViewFlipper
         android:id="@+id/vf"
+        android:layout_marginTop="5dp"
         android:layout_below="@+id/button_hu"
         android:layout_width="fill_parent"
         android:layout_height="220dp"

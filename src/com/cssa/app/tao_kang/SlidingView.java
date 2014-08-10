@@ -23,6 +23,7 @@ public class SlidingView extends ViewGroup {
 	private static final int SNAP_VELOCITY = 1000;
 	private View mLeftView;
 	private View mRightView;
+	private boolean forward = true;
 
 	public SlidingView(Context context) {
 		super(context);
@@ -221,6 +222,7 @@ public class SlidingView extends ViewGroup {
 				velocityX = 0;
 				int oldScrollX = getScrollX();
 				int dx = 0;
+				int menuWidth = mLeftView.getWidth();
 				//if (oldScrollX < 0) {
 					// ◊Û±ﬂ
 					/**if (oldScrollX < -getLeftMenuWidth() / 2
@@ -237,20 +239,66 @@ public class SlidingView extends ViewGroup {
 				//} 
 				if(oldScrollX > 0) {
 					// ”“±ﬂ
-					if (oldScrollX > getRightMenuWidth() / 2
+					
+					if(forward || velocityX < -SNAP_VELOCITY)
+					{
+						dx = getRightMenuWidth() - oldScrollX;
+						smoothScrollTo(dx);
+						forward = false;
+					}
+					else if(!forward || velocityX > SNAP_VELOCITY)
+					{
+						dx = -oldScrollX;
+						smoothScrollTo(dx);
+						forward = true;
+					}
+					
+					
+					
+					
+					
+					/**if (oldScrollX > (getRightMenuWidth() / 4)
+							|| velocityX < -SNAP_VELOCITY) {
+						// ”“≤‡“≥√ÊªÆ≥ˆ
+						if(dxx > 0)
+						{
+							smoothScrollTo(-oldScrollX);
+							Log.e("go ahead", "return ");
+							dxx = 0;
+						}
+						else
+						{
+							dx = getRightMenuWidth() - oldScrollX;
+							smoothScrollTo(dx);
+							Log.e("go ahead", "go ahead");
+							dxx = dx;
+						}
+
+					}
+					if (oldScrollX <= (getRightMenuWidth() / 4)
+							|| velocityX > SNAP_VELOCITY) {
+						// ”“≤‡“≥√Êπÿ±’
+						dx = -oldScrollX;						
+						smoothScrollTo(dx);
+						Log.e("go back", "go back");
+						dxx = dx;
+					}
+					/**if (oldScrollX > (getRightMenuWidth() / 4)
 							|| velocityX < -SNAP_VELOCITY) {
 						// ”“≤‡“≥√ÊªÆ≥ˆ
 						dx = getRightMenuWidth() - oldScrollX;
+						smoothScrollTo(dx);
 
 					}
-					if (oldScrollX <= getRightMenuWidth() / 2
+					if (oldScrollX <= (getRightMenuWidth() / 4)
 							|| velocityX > SNAP_VELOCITY) {
 						// ”“≤‡“≥√Êπÿ±’
 						dx = -oldScrollX;
-					}
+						smoothScrollTo(dx);
+					}**/
 				}
 
-				smoothScrollTo(dx);
+				
 				clearChildrenCache();
 
 			}

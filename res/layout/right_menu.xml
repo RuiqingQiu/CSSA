@@ -16,26 +16,26 @@
         android:id="@+id/right_menu_btn2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ch2" 
-        android:onClick="ch2"/>
+        android:text="ch2"
+         android:onClick="ch2"/>
      <Button
         android:id="@+id/right_menu_btn3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ch3" 
+        android:text="ch3"
         android:onClick="ch3"/>
 
     <Button
         android:id="@+id/right_menu_btn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ch4" 
-        android:onClick="ch4"/>
+        android:text="ch4"
+         android:onClick="ch4"/>
      <Button
-        android:id="@+id/right_menu_btn5"
+        android:id="@+id/right_menu_btn4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ch5" 
-        android:onClick="ch5"/>
+        android:text="ch5"
+         android:onClick="ch5"/>
 
 </LinearLayout>

@@ -50,7 +50,7 @@ public class MainActivity extends Activity implements OnGestureListener{
 	private Handler h; 
 	private GestureDetector FlipDetector;
 	//arraylist used to store list of images for animation purpose
-	public static ArrayList<Bitmap> imgs =new ArrayList<Bitmap>();
+	public static ArrayList<Bitmap> imgs = new ArrayList<Bitmap>();
 	//index used in animation to indicate which image should be presenteed
 	private int index=0;
 	//view flipper for flip image on the top of the activity

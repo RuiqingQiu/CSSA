@@ -168,7 +168,13 @@ public class DAO
    * @return
    * @throws JSONException
    */
-  public recent_activity get_simple_activity_detail_by_index(int index) throws JSONException
+  /**
+   * 
+   * @param ID
+   * @return
+   * @throws JSONException
+   */
+  public recent_activity get_simple_activity_detail_by_index(int index, int num) throws JSONException
   {
 	  String response="";
 	  String urlarg = "app";
@@ -183,9 +189,19 @@ public class DAO
 	  try{
 		  JSONObject mainObject = new JSONObject(response);
 		  JSONArray jarray = mainObject.getJSONArray("activity");
-		  for(int i = 0; i < jarray.length(); i++){
+		  int len = 0;
+		  if((index+num)>jarray.length()){
+			  len = jarray.length();
+		  }else{
+			  len = index+num;
+		  }
+		  Log.e("len", String.valueOf(len));
+		  Log.e("index", String.valueOf(index));
+		  //11
+		  for(int i = index; i < len; i++){
 			  JSONObject o = jarray.getJSONObject(i);
 			  String id = o.getString("id");
+			  //Log.e("id",id);
 			  String eventDate = o.getString("activityDate");
 			  String image = o.getString("image");
 			  String introduction = o.getString("intro");
@@ -206,7 +222,6 @@ public class DAO
 	  
 	  return r_a;
   }
-  
   /**
    * 
    * @return

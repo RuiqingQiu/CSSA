@@ -38,8 +38,10 @@ public class manager {
 	
 	public final static String VERSION_FILENAME = "version_file";
 	private int cursorOfActivity;
-	//Print 14 numbers of images. offset 1
-	public int IMAGE_NUMBERS = 8;
+	//Print 4 numbers of images. offset 1
+	//
+	private int index = 0;
+	public int IMAGE_NUMBERS = 5;
 
     
 	private manager(){
@@ -101,6 +103,10 @@ public class manager {
 		 //image.compress(Bitmap.CompressFormat.PNG, 100, out);
 		 //Bitmap decoded = BitmapFactory.decodeStream(new ByteArrayInputStream(out.toByteArray()));
 		 return image;
+	}
+	public void resetIndex()
+	{
+		index = 0;
 	}
 	public void addImagesToFiles(List<Bitmap> imgs){
 		int number = 1;
@@ -164,12 +170,23 @@ public class manager {
 	public recent_activity getNextPageRecentActivity(int count){
 		recent_activity r_a = null;
 		try {
-			r_a = dao.get_simple_activity_detail_by_index(1);
+			//index = 0;
+			r_a = dao.get_simple_activity_detail_by_index(index,count);
+			if(r_a.getList().size()<count){
+				
+			}else{
+				index+=count;
+			}
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return r_a;
+	}
+	
+	public void reset(){
+		
+		this.index = 0;
 	}
 	
 	public freshman101 getFreshman101(){

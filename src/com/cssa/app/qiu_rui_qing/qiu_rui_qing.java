@@ -65,74 +65,30 @@ public class qiu_rui_qing extends Activity {
     	switch(i % 4){
     	    	case 0:
     	     		tmp = new MyPlayCard(
-    	 				lst.get(i).getTitle(),
-    	 				lst.get(i).getIntoduction(),
+    	 				lst.get(i).getTitle() + " (" + lst.get(i).getDate() + ")",
+    	 				 lst.get(i).getIntoduction(),
     	 				"#ff6347", "#ff6347", true, true);
     	     		break;
     	     	case 1:
     	     		tmp = new MyPlayCard(
-    	     				lst.get(i).getTitle(),
+    	     				lst.get(i).getTitle() + " (" + lst.get(i).getDate() + ")",
     	     				lst.get(i).getIntoduction(),
     	     				"#ee5c42", "#ee5c42", true, true);
     	    		break;
     	     	case 2:
     	     		tmp = new MyPlayCard(
-    	     				lst.get(i).getTitle(),
+    	     				lst.get(i).getTitle()+ " (" + lst.get(i).getDate() + ")",
     	     				lst.get(i).getIntoduction(),
     	     				"#cd4f39", "#cd4f39", true, true);
     	     		break;
     	     	case 3: 
     	     		tmp = new MyPlayCard(
-    	     				lst.get(i).getTitle(),
+    	     				lst.get(i).getTitle() + " (" + lst.get(i).getDate() + ")",
     	     				lst.get(i).getIntoduction(),
     	     				"#8b3626","#8b3626", true, true);
     	     		break;
     	     	}
-    	
-    	/*switch(i % 7){
-	    	case 0:
-	    		tmp = new MyPlayCard(
-					lst.get(i).getTitle(),
-					lst.get(i).getIntoduction(),
-					"red", "#1e1e1e", true, true);
-	    		break;
-	    	case 1:
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"#ff6633", "#9d36d0", true, true);
-	    		break;
-	    	case 2:
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"yellow", "#e00707", true, true);
-	    		break;
-	    	case 3: 
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"green","#33b6ea", true, true);
-	    		break;
-	    	case 4: 
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"cyan","#33b6ea", true, true);
-	    		break;
-	    	case 5: 
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"blue","#33b6ea", true, true);
-	    		break;
-	    	case 6: 
-	    		tmp = new MyPlayCard(
-	    				lst.get(i).getTitle(),
-	    				lst.get(i).getIntoduction(),
-	    				"purple","#33b6ea", true, true);
-	    		break;
-    	}*/
+    			
     	final String id = lst.get(i).getId();
     	tmp.setOnClickListener(new OnClickListener(){
 			@Override
@@ -190,25 +146,25 @@ public class qiu_rui_qing extends Activity {
 	    		tmp = new MyPlayCard(
 					lst.get(i).getTitle(),
 					lst.get(i).getIntoduction(),
-					"#4ac925", "#222222", true, true);
+					"#ff6347", "#ff6347", true, true);
 	    		break;
 	    	case 1:
 	    		tmp = new MyPlayCard(
 	    				lst.get(i).getTitle(),
 	    				lst.get(i).getIntoduction(),
-	    				"#f2a400", "#9d36d0", true, true);
+	    				"#ee5c42", "#ee5c42", true, true);
 	    		break;
 	    	case 2:
 	    		tmp = new MyPlayCard(
 	    				lst.get(i).getTitle(),
 	    				lst.get(i).getIntoduction(),
-	    				"#e00707", "#e00707", true, true);
+	    				"#cd4f39", "#cd4f39", true, true);
 	    		break;
 	    	case 3: 
 	    		tmp = new MyPlayCard(
 	    				lst.get(i).getTitle(),
 	    				lst.get(i).getIntoduction(),
-	    				"#33b6ea","#33b6ea", true, true);
+	    				"#8b3626","#8b3626", true, true);
 	    		break;
 	    	}
 	    	final String id = lst.get(i).getId();
@@ -235,7 +191,7 @@ public class qiu_rui_qing extends Activity {
 		MyPlayCard tmp = new MyPlayCard(
 				"get next 10 event!"
 				,"",
-				"#33b6ea","#33b6ea", false, true);
+				"#8b795e","#8b795e", false, true);
 		
 		mCardView.addCardToLastStack(tmp);
 		tmp.setOnClickListener(new OnClickListener(){

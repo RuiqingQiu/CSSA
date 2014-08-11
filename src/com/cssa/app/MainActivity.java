@@ -268,6 +268,7 @@ class GetTask extends AsyncTask<Object, Void, ArrayList<Bitmap>> {
     @Override
     protected void onPostExecute(ArrayList<Bitmap> result) {
         MainActivity.imgs = result;
+    	Log.e("do in back ground", "downloading!");
         mDialog.dismiss();
       //set all pictures in imgs to viewflipper for furthur gesture detection
         for(int i=0;i<MainActivity.imgs.size();i++)

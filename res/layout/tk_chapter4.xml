@@ -24,7 +24,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="学生社团"
+        android:text="学生社团\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -38,7 +38,7 @@
       <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="美国校园里的兄弟会和姐妹会以及我亲历的兄弟会经历 文/余凯尔"
+        android:text="美国校园里的兄弟会和姐妹会以及我亲历的兄弟会经历 文/余凯尔\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -52,7 +52,7 @@
                 <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="What？什么是兄弟会姐妹会"
+        android:text="What？什么是兄弟会姐妹会\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -65,7 +65,7 @@
             <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Who？谁可以加入兄弟会？"
+        android:text="Who？谁可以加入兄弟会？\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -79,7 +79,7 @@
                 <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="When？什么时候兄弟会会招人？"
+        android:text="When？什么时候兄弟会会招人？\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -93,7 +93,7 @@
                     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="How？如何加入兄弟会？"
+        android:text="How？如何加入兄弟会？\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -106,7 +106,7 @@
                   <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Why？为什么要加入一个兄弟会  姐妹会"
+        android:text="Why？为什么要加入一个兄弟会  姐妹会\n"
 		android:textSize="20sp"
         />
                   
@@ -121,7 +121,7 @@
                       <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="My Fraternal Experiences"
+        android:text="My Fraternal Experiences\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -135,7 +135,7 @@
                           <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="结束语"
+        android:text="结束语\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -149,13 +149,13 @@
                            <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="校内活动"
+        android:text="校内活动\n"
 		android:textSize="20sp"
         />
                            <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Final内衣奔"
+        android:text="Final内衣奔\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -169,7 +169,7 @@
      <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hullabaloo"
+        android:text="Hullabaloo\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -183,7 +183,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Watermelon drop"
+        android:text="Watermelon drop\n"
 		android:textSize="20sp"
         />
     <TextView
@@ -197,7 +197,7 @@
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Sun God  Festival"
+        android:text="Sun God  Festival\n"
 		android:textSize="20sp"
         />
     <TextView

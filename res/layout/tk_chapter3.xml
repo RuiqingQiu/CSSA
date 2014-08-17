@@ -17,20 +17,20 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Chapter 3： Lifestyle\n"
+        android:text="第三章 初来乍到\n"
         android:gravity="center"
 		android:textSize="22sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="吃饭"
+        android:text="注册报到：International center （ICenter"
 		android:textSize="20sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/section3food" 
+        android:text="@string/C31" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />
@@ -38,13 +38,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="学习"
+        android:text="医疗检验：TB test"
 		android:textSize="20sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/section3study" 
+        android:text="@string/C32" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />
@@ -52,54 +52,26 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="学习用品采购"
+        android:text="临时住宿："
 		android:textSize="20sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/section3shopping" 
+        android:text="@string/C33" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="手机"
+        android:text="学生保险:"
 		android:textSize="20sp"
         />
      <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/section3mobile" 
-		android:textSize="14sp"
-		android:lineSpacingExtra="6dp"
-        />
-     
-     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="银行"
-		android:textSize="20sp"
-        />
-     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/section3bank" 
-		android:textSize="14sp"
-		android:lineSpacingExtra="6dp"
-        />
-     
-     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="机票"
-		android:textSize="20sp"
-        />
-     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/section3flight" 
+        android:text="@string/C34" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />

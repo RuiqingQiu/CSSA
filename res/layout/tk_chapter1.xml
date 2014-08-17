@@ -29,16 +29,84 @@
         android:id="@+id/text0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Chapter 1: Beginning\n"
+        android:text="第一章：UCSD at a Glance\n"
         android:gravity="center"
 		android:textSize="22sp"
         />
-     <TextView
+    <TextView
+        android:id="@+id/text1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/section1" 
-		android:textSize="14sp"
-		android:lineSpacingExtra="6dp"
+        android:layout_below = "@id/text0"
+        android:text="UCSD简介:"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below = "@id/text1"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/UCSDInfo"
+        android:textSize="14sp" />
+    
+       
+    <TextView
+        android:id="@+id/text3"
+        android:layout_below = "@id/text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UCSD著名校友："
+		android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/text4"
+        android:layout_below = "@id/text3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/UCSDGraduates"
+		
+        />
+    
+    
+    <TextView
+        android:id="@+id/text5"
+        android:layout_below = "@id/text4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="San Diego 简介"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/text6"
+        android:layout_below = "@id/text5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/SDInfo"
+        />
+    
+    
+    <TextView
+        android:id="@+id/text7"
+        android:layout_below = "@id/text6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="学校资源"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/text8"
+        android:layout_below = "@id/text7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/schoolres"
+        
         />
 </LinearLayout>
 </ScrollView>

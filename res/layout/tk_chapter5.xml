@@ -13,23 +13,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <TextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="第五章 生活百科\n"
-        android:gravity="center"
-		android:textSize="22sp"
-        />
-  
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/C51" 
-		android:textSize="14sp"
-		android:lineSpacingExtra="6dp"
-        />
-    
+   
     
 </LinearLayout>
 </RelativeLayout>

@@ -44,6 +44,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.ViewFlipper;
 import android.widget.LinearLayout;
+<<<<<<< HEAD
+=======
+
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
+
+>>>>>>> FETCH_HEAD
 
 import android.view.ViewTreeObserver;
 import android.view.ViewTreeObserver.OnGlobalLayoutListener;
@@ -96,8 +103,11 @@ public class MainActivity extends Activity implements OnGestureListener{
 		final LinearLayout second2buttons_layout = (LinearLayout) findViewById(R.id.second2buttons);
 		final LinearLayout.LayoutParams second2buttons_params = (LinearLayout.LayoutParams) second2buttons_layout.getLayoutParams();
 		final ViewTreeObserver second2buttons_vto = second2buttons_layout.getViewTreeObserver(); 
+<<<<<<< HEAD
 		final LinearLayout flipper = (LinearLayout) findViewById(R.id.flipper);
 		final LinearLayout.LayoutParams flipper_params= (LinearLayout.LayoutParams) flipper.getLayoutParams();
+=======
+>>>>>>> FETCH_HEAD
 		first2buttons_vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
 			
 			@Override
@@ -108,8 +118,11 @@ public class MainActivity extends Activity implements OnGestureListener{
 				width = second2buttons_layout.getWidth();
 				second2buttons_params.height = (int) (width*0.5);
 				second2buttons_layout.setLayoutParams(second2buttons_params);
+<<<<<<< HEAD
 				flipper_params.width = (int) (width);
 				flipper.setLayoutParams(flipper_params);
+=======
+>>>>>>> FETCH_HEAD
 				return true;
 			}
 		});

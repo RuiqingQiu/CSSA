@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/bbg_1920x1080"
+    android:background="#FFFFFFFF"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
@@ -13,23 +13,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
     
-    <TextView
-
+   <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="第五章 生活百科\n"
-        android:gravity="center"
-		android:textSize="22sp"
-        />
-  
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/C51" 
+        android:text="@string/section5" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />
-    
     
 </LinearLayout>
 </RelativeLayout>

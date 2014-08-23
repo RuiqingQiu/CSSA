@@ -41,9 +41,15 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout.LayoutParams;
 import android.widget.ViewFlipper;
+import android.widget.LinearLayout;
 
-@SuppressLint("NewApi")
+import android.view.ViewTreeObserver;
+import android.view.ViewTreeObserver.OnGlobalLayoutListener;
+
+
+@SuppressLint({ "NewApi", "CutPasteId" })
 public class MainActivity extends Activity implements OnGestureListener{
 	public static MainActivity mainActivity;
 	//handler used in postdelay method
@@ -81,7 +87,38 @@ public class MainActivity extends Activity implements OnGestureListener{
 		viewFlipper = (ViewFlipper) findViewById(R.id.vf);
 		buttonOnMainPage = (ImageButton)findViewById(R.id.button_qiu);
 		
-	
+		/*********Try to set linear layout ratioly*********
+		 * Zinsser
+		 */
+		final LinearLayout first2buttons_layout = (LinearLayout) findViewById(R.id.first2buttons);
+		final LinearLayout.LayoutParams first2buttons_params = (LinearLayout.LayoutParams) first2buttons_layout.getLayoutParams();
+		final ViewTreeObserver first2buttons_vto = first2buttons_layout.getViewTreeObserver(); 
+		final LinearLayout second2buttons_layout = (LinearLayout) findViewById(R.id.second2buttons);
+		final LinearLayout.LayoutParams second2buttons_params = (LinearLayout.LayoutParams) second2buttons_layout.getLayoutParams();
+		final ViewTreeObserver second2buttons_vto = second2buttons_layout.getViewTreeObserver(); 
+		final LinearLayout flipper = (LinearLayout) findViewById(R.id.flipper);
+		final LinearLayout.LayoutParams flipper_params= (LinearLayout.LayoutParams) flipper.getLayoutParams();
+		first2buttons_vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+			
+			@Override
+			public boolean onPreDraw() {
+				int width = first2buttons_layout.getWidth();
+				first2buttons_params.height = (int) (width*0.5);
+				first2buttons_layout.setLayoutParams(first2buttons_params);
+				width = second2buttons_layout.getWidth();
+				second2buttons_params.height = (int) (width*0.5);
+				second2buttons_layout.setLayoutParams(second2buttons_params);
+				flipper_params.width = (int) (width);
+				flipper.setLayoutParams(flipper_params);
+				return true;
+			}
+		});
+		/*
+		params.height=(int) (params.width*0.5);
+		Log.e("height",String.valueOf(params.height));
+		Log.e("width",String.valueOf(params.width));
+		Log.e("weight",String.valueOf(params.weight));
+		findViewById(R.id.first2buttons).setLayoutParams(params);*/
 	}
 	
 	/**

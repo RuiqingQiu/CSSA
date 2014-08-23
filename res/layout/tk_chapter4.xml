@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/bbg_1920x1080"
+    android:background="#FFFFFFFF"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
@@ -17,75 +17,193 @@
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="第四章 衣食住行\n"
+        android:text="第四章 融入\n"
         android:gravity="center"
 		android:textSize="22sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="衣"
+        android:text="学生社团\n"
 		android:textSize="20sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/C41" 
+        android:text="@string/S41" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />
     
-    <TextView
+      <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="食"
+        android:text="美国校园里的兄弟会和姐妹会以及我亲历的兄弟会经历 文/余凯尔\n"
 		android:textSize="20sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/C42" 
+        android:text="@string/S42" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />
     
-    <TextView
+                <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="购物"
+        android:text="What？什么是兄弟会姐妹会\n"
 		android:textSize="20sp"
         />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/C43" 
+        android:text="@string/S43" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />
+            <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Who？谁可以加入兄弟会？\n"
+		android:textSize="20sp"
+        />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="住宿"
+        android:text="@string/S44" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
+                <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="When？什么时候兄弟会会招人？\n"
 		android:textSize="20sp"
         />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/S45" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
+                    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="How？如何加入兄弟会？\n"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/S46" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+                  <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Why？为什么要加入一个兄弟会  姐妹会\n"
+		android:textSize="20sp"
+        />
+                  
+                   <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/S47" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
+                      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Fraternal Experiences\n"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/S48" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
+                          <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="结束语\n"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/S49" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
+                           <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="校内活动\n"
+		android:textSize="20sp"
+        />
+                           <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Final内衣奔\n"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/S410" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
      <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/C44" 
+        android:text="Hullabaloo\n"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/S411" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />
-     
+    
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Watermelon drop\n"
+		android:textSize="20sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/S412" 
+		android:textSize="14sp"
+		android:lineSpacingExtra="6dp"
+        />
+    
         <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="交通 行车"
+        android:text="Sun God  Festival\n"
 		android:textSize="20sp"
         />
-     <TextView
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/C45" 
+        android:text="@string/S413" 
 		android:textSize="14sp"
 		android:lineSpacingExtra="6dp"
         />

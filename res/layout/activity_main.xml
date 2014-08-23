@@ -3,17 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-<<<<<<< HEAD
     android:layout_marginBottom="12dp"
     android:layout_marginLeft="12dp"
     android:layout_marginRight="12dp"
     android:layout_marginTop="12dp"
-=======
-    android:layout_marginBottom="15dp"
-    android:layout_marginLeft="15dp"
-    android:layout_marginRight="15dp"
-    android:layout_marginTop="15dp"
->>>>>>> FETCH_HEAD
+
     android:orientation="vertical"
     tools:context=".MainActivity" >
     
@@ -29,11 +23,7 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="50"
-<<<<<<< HEAD
         android:background="@drawable/main_event"
-=======
-        android:background="@drawable/button_event"
->>>>>>> FETCH_HEAD
         android:contentDescription="recent activities"
         android:onClick="qiu_rui_qing"
         android:layout_marginRight="5dp"
@@ -53,11 +43,8 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
-<<<<<<< HEAD
         android:background="@drawable/main_monsoon"/>
-=======
-        android:background="@drawable/button_freshman101"/>
->>>>>>> FETCH_HEAD
+
 
 </LinearLayout>
 <LinearLayout
@@ -78,12 +65,9 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
-<<<<<<< HEAD
         android:background="@drawable/main_video"
          />
-=======
-        android:background="@drawable/button_food2cssa"/>
->>>>>>> FETCH_HEAD
+
 
     <ImageButton
         android:id="@+id/button_hu"
@@ -97,7 +81,6 @@
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"
-<<<<<<< HEAD
         android:background="@drawable/main_sponsor"/>
 </LinearLayout>
 <LinearLayout
@@ -116,14 +99,4 @@
 </ViewFlipper>
 </LinearLayout>
 </LinearLayout>
-=======
-        android:background="@drawable/button_sponsor"/>
-</LinearLayout>
 
-<ViewFlipper
-    android:id="@+id/vf"
-    android:layout_width="match_parent"
-    android:layout_height="100px" >
-</ViewFlipper>
-</LinearLayout>
->>>>>>> FETCH_HEAD

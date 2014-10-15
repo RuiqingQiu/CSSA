@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cssa.app"
+    package="com.ucsd.cssa.app"
     android:versionCode="1"
     android:versionName="1.0" >
 	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
@@ -16,7 +16,7 @@
         android:label="CSSA">
         <!--  MainActivity Part -->
         <activity
-            android:name="com.cssa.app.MainActivity"
+            android:name="com.ucsd.cssa.app.MainActivity"
             android:screenOrientation="portrait"
             android:label="CSSA"
              android:theme="@style/AppBaseTheme" >
@@ -29,59 +29,59 @@
         
         <!--  TaoKang's activity -->
         <activity
-            android:name="com.cssa.app.tao_kang.tao_kang"
+            android:name="com.ucsd.cssa.app.tao_kang.tao_kang"
             android:label="" >    
         </activity>
       
         <activity
-            android:name="com.cssa.app.tao_kang.chapter1"
+            android:name="com.ucsd.cssa.app.tao_kang.chapter1"
             android:label="" >
             
         </activity>
         
         <activity
-             android:name="com.cssa.app.tao_kang.chapter2"
+             android:name="com.ucsd.cssa.app.tao_kang.chapter2"
             android:label="" >
         </activity>
         
         <activity
-            android:name="com.cssa.app.webpages.SponsorPage"
+            android:name="com.ucsd.cssa.app.webpages.SponsorPage"
             android:label="">
         </activity>
         <activity
-            android:name="com.cssa.app.webpages.Food2Cssa"
+            android:name="com.ucsd.cssa.app.webpages.Food2Cssa"
             android:label="">
         </activity>
          <activity
-            android:name="com.cssa.app.tao_kang.chapter3"
+            android:name="com.ucsd.cssa.app.tao_kang.chapter3"
             android:label="" >
             
         </activity>
         
         <activity
-            android:name="com.cssa.app.tao_kang.chapter4"
+            android:name="com.ucsd.cssa.app.tao_kang.chapter4"
             android:label="" >
             
         </activity>
         
              <activity
-            android:name="com.cssa.app.tao_kang.chapter5"
+            android:name="com.ucsd.cssa.app.tao_kang.chapter5"
             android:label="" >
             
         </activity>
         <!-- QiuRuiqing's Activity -->
         <activity            
-            android:name="com.cssa.app.qiu_rui_qing.qiu_rui_qing"          
+            android:name="com.ucsd.cssa.app.qiu_rui_qing.qiu_rui_qing"          
             android:label="" >
         </activity>
       
 
         <activity
-            android:name="com.cssa.app.qiu_rui_qing.ActivityList"
+            android:name="com.ucsd.cssa.app.qiu_rui_qing.ActivityList"
             android:label="">
         </activity>
         <activity
-            android:name="com.cssa.app.qiu_rui_qing.ActivityDetailView"
+            android:name="com.ucsd.cssa.app.qiu_rui_qing.ActivityDetailView"
             android:label="@string/app_name">
         </activity>
     </application>

@@ -28,9 +28,9 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.util.LruCache;
 
-import com.cssa.app.ActivityImageFetchMachine;
-import com.cssa.app.DAO;
-import com.cssa.app.MainActivity;
+import com.ucsd.cssa.app.ActivityImageFetchMachine;
+import com.ucsd.cssa.app.DAO;
+import com.ucsd.cssa.app.MainActivity;
 
 public class manager {
 	public static manager M;
